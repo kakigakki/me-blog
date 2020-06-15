@@ -8,6 +8,7 @@
   },
   "license": "MIT",
   "author": "ulivz<chl814@foxmail.com>",
+  "main": "index.js",
   "files": [
     "index.js",
     "styles",
@@ -16,10 +17,9 @@
     "fonts",
     "components"
   ],
-  "main": "index.js",
   "scripts": {
-    "docs:build": "vuepress build docs",
     "dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
     "example:build": "vuepress build example --temp example/.temp",
     "example:dev": "vuepress dev example --temp example/.temp",
     "lint": "eslint . --ext .js,.vue",
