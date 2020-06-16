@@ -1,14 +1,15 @@
 const removeMd = require('remove-markdown')
 const path = require('path')
 const pick = require('lodash/pick')
+const moment = require('moment');
+moment.locale("ja")
 
 module.exports = themeConfig => {
   /**
    * Default theme configuration
    */
   themeConfig = Object.assign(themeConfig, {
-    nav: themeConfig.nav || [
-      {
+    nav: themeConfig.nav || [{
         text: 'Blog',
         link: '/',
       },
@@ -18,10 +19,8 @@ module.exports = themeConfig => {
       },
     ],
     summary: themeConfig.summary === undefined ? true : themeConfig.summary,
-    summaryLength:
-      typeof themeConfig.summaryLength === 'number'
-        ? themeConfig.summaryLength
-        : 200,
+    summaryLength: typeof themeConfig.summaryLength === 'number' ?
+      themeConfig.summaryLength : 200,
     pwa: !!themeConfig.pwa,
   })
 
@@ -29,20 +28,27 @@ module.exports = themeConfig => {
    * Configure blog plugin
    */
   const defaultBlogPluginOptions = {
-    directories: [
-      {
+    directories: [{
         id: 'post',
         dirname: '_posts',
         path: '/',
       },
-    ],
-    frontmatters: [
       {
-        id: 'tag',
-        keys: ['tags'],
-        path: '/tag/',
+        id: 'writings',
+        dirname: 'writings',
+        path: '/writings/',
+      },
+      {
+        id: 'japanese',
+        dirname: 'japanese',
+        path: '/japanese/',
       },
     ],
+    frontmatters: [{
+      id: 'tag',
+      keys: ['tags'],
+      path: '/tag/',
+    }, ],
     globalPagination: {
       lengthPerPage: 5,
     },
@@ -53,9 +59,9 @@ module.exports = themeConfig => {
   if (isFeedEnabled) {
     const {
       rss = true,
-      atom = false,
-      json = false,
-      ...feedOptions
+        atom = false,
+        json = false,
+        ...feedOptions
     } = themeConfig.feed
     resolvedFeedOptions = Object.assign({}, feedOptions, {
       feeds: {
@@ -79,8 +85,7 @@ module.exports = themeConfig => {
     feed: resolvedFeedOptions,
   }
 
-  const blogPluginOptions = Object.assign(
-    {},
+  const blogPluginOptions = Object.assign({},
     defaultBlogPluginOptions,
     themeConfigPluginOptions
   )
@@ -92,8 +97,7 @@ module.exports = themeConfig => {
   const enableSmoothScroll = themeConfig.smoothScroll === true
 
   const plugins = [
-    '@vuepress/plugin-nprogress',
-    ['@vuepress/medium-zoom', true],
+    '@vuepress/plugin-nprogress', ['@vuepress/medium-zoom', true],
     [
       '@vuepress/search',
       {
@@ -102,6 +106,11 @@ module.exports = themeConfig => {
     ],
     ['@vuepress/blog', blogPluginOptions],
     ['smooth-scroll', enableSmoothScroll],
+    ['@vuepress/last-updated', {
+      transformer: (timestamp) => {
+        return moment(timestamp).format("LLLL")
+      }
+    }]
   ]
 
   /**
@@ -120,9 +129,8 @@ module.exports = themeConfig => {
   const config = {
     plugins,
     define: {
-      THEME_BLOG_PAGINATION_COMPONENT: themeConfig.paginationComponent
-        ? themeConfig.paginationComponent
-        : 'Pagination',
+      THEME_BLOG_PAGINATION_COMPONENT: themeConfig.paginationComponent ?
+        themeConfig.paginationComponent : 'Pagination',
     },
     alias: {
       fonts: path.resolve(__dirname, 'fonts'),
@@ -139,9 +147,9 @@ module.exports = themeConfig => {
         pageCtx.summary =
           removeMd(
             strippedContent
-              .trim()
-              .replace(/^#+\s+(.*)/, '')
-              .slice(0, themeConfig.summaryLength)
+            .trim()
+            .replace(/^#+\s+(.*)/, '')
+            .slice(0, themeConfig.summaryLength)
           ) + ' ...'
         pageCtx.frontmatter.description = pageCtx.summary
       }

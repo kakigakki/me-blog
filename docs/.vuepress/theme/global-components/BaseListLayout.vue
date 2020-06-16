@@ -106,7 +106,6 @@ export default {
   created() {
     this.paginationComponent = this.getPaginationComponent()
   },
-
   methods: {
     getPaginationComponent() {
       const n = THEME_BLOG_PAGINATION_COMPONENT
