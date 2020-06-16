@@ -1,4 +1,5 @@
 module.exports = {
+  base: "/me-blog/",
   title: 'KAKi BLOG',
   description: '学习，记录，分享，提升',
   themeConfig: {
@@ -11,10 +12,6 @@ module.exports = {
       {
         text: '随笔',
         link: '/writings/'
-      },
-      {
-        text: '日语',
-        link: '/japanese/'
       },
       {
         text: 'github',

@@ -17,6 +17,7 @@
         />
       </header>
       <Content itemprop="articleBody" />
+      <p class="lastUpdated">最後更新：{{$page.lastUpdated}}</p>
       <footer>
         <Newsletter v-if="$service.email.enabled" />
         <hr />
@@ -58,6 +59,9 @@ export default {
 
   .post-title
     padding-top 0
+  .lastUpdated
+    font-size 11px
+    text-align right 
 
 @media (max-width: $MQMobile)
   .vuepress-blog-theme-content

@@ -1,13 +1,12 @@
 {
-  "name": "@vuepress/theme-blog",
+  "name": "blog",
   "version": "2.2.0",
-  "description": "Default blog theme for VuePress",
+  "description": "kaki's blog",
   "repository": {
     "type": "git",
-    "url": "ulivz/vuepress-theme-blog"
+    "url": "kakigakki/me-blog"
   },
-  "license": "MIT",
-  "author": "ulivz<chl814@foxmail.com>",
+  "author": "kaki",
   "main": "index.js",
   "files": [
     "index.js",
@@ -20,11 +19,9 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "example:build": "vuepress build example --temp example/.temp",
-    "example:dev": "vuepress dev example --temp example/.temp",
     "lint": "eslint . --ext .js,.vue",
-    "prepublishOnly": "npm run test && npm run example:build && conventional-changelog -p angular -r 2 -i CHANGELOG.md -s",
-    "test": "jest"
+    "deploy": "bash deploy.sh"
+
   },
   "husky": {
     "hooks": {

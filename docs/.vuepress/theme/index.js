@@ -38,11 +38,6 @@ module.exports = themeConfig => {
         dirname: 'writings',
         path: '/writings/',
       },
-      {
-        id: 'japanese',
-        dirname: 'japanese',
-        path: '/japanese/',
-      },
     ],
     frontmatters: [{
       id: 'tag',
@@ -108,7 +103,7 @@ module.exports = themeConfig => {
     ['smooth-scroll', enableSmoothScroll],
     ['@vuepress/last-updated', {
       transformer: (timestamp) => {
-        return moment(timestamp).format("LLLL")
+        return moment(timestamp).calendar()
       }
     }]
   ]
