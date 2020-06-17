@@ -17,11 +17,10 @@
     "components"
   ],
   "scripts": {
+    "deploy": "bash deploy.sh",
     "dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "lint": "eslint . --ext .js,.vue",
-    "deploy": "bash deploy.sh"
-
+    "lint": "eslint . --ext .js,.vue"
   },
   "husky": {
     "hooks": {
@@ -40,16 +39,16 @@
   },
   "dependencies": {
     "@vuepress/plugin-blog": "^1.9.2",
+    "@vuepress/plugin-last-updated": "^1.5.2",
     "@vuepress/plugin-medium-zoom": "1.0.0",
     "@vuepress/plugin-nprogress": "1.0.0",
     "@vuepress/plugin-pwa": "1.0.0",
     "@vuepress/plugin-search": "1.0.0",
     "dayjs": "^1.8.19",
+    "moment": "^2.26.0",
     "remove-markdown": "^0.3.0",
     "vue-feather-icons": "^4.21.0",
-    "vuepress-plugin-smooth-scroll": "^0.0.9",
-    "@vuepress/plugin-last-updated": "^1.5.2",
-    "moment": "^2.26.0"
+    "vuepress-plugin-smooth-scroll": "^0.0.9"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
