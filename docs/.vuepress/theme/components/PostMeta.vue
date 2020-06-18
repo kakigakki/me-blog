@@ -12,7 +12,7 @@
       <span v-if="location" itemprop="address"> &nbsp; in {{ location }}</span>
     </div>
     <div v-if="date" class="post-meta-date">
-      <ClockIcon />
+      <ClockIcon/>
       <time pubdate itemprop="datePublished" :datetime="date">
         {{ resolvedDate }}
       </time>

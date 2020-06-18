@@ -20,15 +20,17 @@
         </div>
       </div>
     </header>
+    <themeColor class="themeColorPicker"></themeColor>
   </section>
 </template>
 
 <script>
 import SearchBox from '@SearchBox'
 import Feed from './Feed'
+import themeColor from "./themeColor"
 
 export default {
-  components: { SearchBox, Feed },
+  components: { SearchBox, Feed,themeColor },
 }
 </script>
 
@@ -57,6 +59,7 @@ export default {
     box-shadow 0 5px 20px rgba(0, 0, 0, 0.08), 0 6px 6px rgba(0, 0, 0, 0.1)
 
 // border-bottom 5px solid lighten(#3eaf7c, 50%)
+
 .header-wrapper
   display flex
   line-height 40px
@@ -107,8 +110,8 @@ export default {
         border 1px solid #cecece
 
         &:hover
-          border 1px solid $accentColor
-          box-shadow 0 0 5px $accentColor
+          border 1px solid  var(--accentColor)
+          box-shadow 0 0 5px  var(--accentColor)
 
       .suggestions
         border 1px solid $darkBorderColor
@@ -120,7 +123,7 @@ export default {
           text-decoration none
 
           &.focused
-            color $accentColor
+            color  var(--accentColor)
 
 @media (max-width: $MQMobile)
   #header

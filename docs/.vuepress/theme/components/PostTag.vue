@@ -60,10 +60,10 @@ export default {
       content ''
 
     &:hover
-      background-color $accentColor
+      background-color  var(--accentColor)
 
       &:after
-        border-left-color $accentColor
+        border-left-color  var(--accentColor)
 
       span
         color #fff

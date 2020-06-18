@@ -17,10 +17,10 @@
         />
       </header>
       <Content itemprop="articleBody" />
-      <p class="lastUpdated">最後更新：{{$page.lastUpdated}}</p>
       <footer>
         <Newsletter v-if="$service.email.enabled" />
         <hr />
+        <p class="lastUpdated">最後更新：{{$page.lastUpdated}}</p>
         <Comment />
       </footer>
     </article>

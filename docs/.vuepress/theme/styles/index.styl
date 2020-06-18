@@ -4,6 +4,10 @@
 @require './wrapper.styl'
 @require './sw-popup.styl'
 
+
+:root{
+  --accentColor:#f45b69
+}
 html, body
   padding 0
   margin 0
@@ -38,14 +42,12 @@ body
 
 a
   font-weight 500
-  color $accentColor
+  color  var(--accentColor)
   text-decoration underline
-  &:hover
-    color darken($accentColor, 20%)
 
 p a code
   font-weight 400
-  color $accentColor
+  color  var(--accentColor)
 
 kbd
   background #eee
@@ -56,8 +58,8 @@ kbd
 
 blockquote
   font-size .9rem
-  color darken($accentColor, 50%)
-  border-left: 3px solid $accentColor;
+  color var(--accentColor)
+  border-left: 3px solid  var(--accentColor);
   margin 0.5rem 0
   padding .25rem 0 .25rem 1rem
 

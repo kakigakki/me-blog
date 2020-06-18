@@ -63,5 +63,5 @@ export default {
 
 .nav-link
   &:hover, &.router-link-active
-    color $accentColor
+    color  var(--accentColor)
 </style>

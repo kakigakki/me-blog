@@ -170,14 +170,14 @@ export default {
       white-space nowrap
 
     &.active
-      border-left-color $accentColor
+      border-left-color  var(--accentColor)
 
       a
-        color $accentColor
+        color  var(--accentColor)
 
     &:hover
       a
-        color $accentColor
+        color  var(--accentColor)
 
   for i in range(3, 6)
     .vuepress-toc-h{i} a

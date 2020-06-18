@@ -14,15 +14,15 @@ export default {
 .blog-tag
   display inline-flex
   align-items center
-  height 45px
+  height 30px
   word-break break-word
-  font-size 20px
-  margin-right 20px
-  margin-bottom 20px
-  padding 0 15px
+  font-size 15px
+  margin-right 10px
+  margin-bottom 10px
+  padding 0 10px
   border-radius 5px
   font-weight 300
-  text-align left
+  text-align center
   box-sizing border-box
   transition background-color 0.3s
   color $darkTextColor
@@ -31,9 +31,9 @@ export default {
   transition all 0.5s
 
   &:hover
-    color $accentColor !important
-    border 1px solid $accentColor
-    box-shadow 0 0 5px $accentColor
+    color  var(--accentColor) !important
+    border 1px solid  var(--accentColor)
+    box-shadow 0 0 5px  var(--accentColor)
 
 @media screen and (max-width: 768px)
   .blog-tag

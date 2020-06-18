@@ -207,5 +207,5 @@ export default {
     margin-right 5px
 
     &:hover
-      color $accentColor
+      color  var(--accentColor)
 </style>
