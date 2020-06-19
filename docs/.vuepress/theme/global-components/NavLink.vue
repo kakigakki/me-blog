@@ -59,7 +59,7 @@ export default {
 
 <style lang="stylus">
 .nav-link
-  color $darkTextColor
+  color  var(--textColor)
 
 .nav-link
   &:hover, &.router-link-active

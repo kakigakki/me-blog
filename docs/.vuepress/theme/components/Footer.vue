@@ -135,7 +135,7 @@ ol, ul
 .footer
   min-height 60px
   box-sizing border-box
-  background-color $footerBgColor
+  background-color var(--accentColor)
   display flex
   padding 15px 32px
 
@@ -154,7 +154,7 @@ ol, ul
 
         a
           font-size 12px
-          color $footerColor
+          color var(--textColor)
           text-decoration none
           transition color 0.3s
 

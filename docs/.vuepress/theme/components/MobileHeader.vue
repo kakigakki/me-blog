@@ -64,6 +64,7 @@ export default {
     align-items center
     justify-content space-between
     padding 1.2em
+    height  1.2em
 
     .mobile-home-link
       text-decoration none

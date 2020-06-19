@@ -25,7 +25,7 @@ export default {
   text-align center
   box-sizing border-box
   transition background-color 0.3s
-  color $darkTextColor
+  color  var(--textColor)
   border 1px solid $darkBorderColor
   text-decoration none
   transition all 0.5s

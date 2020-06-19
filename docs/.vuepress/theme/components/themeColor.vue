@@ -38,6 +38,9 @@ export default {
       item.addEventListener("click",function(){
         this.classList.add("activeAnima")
       })
+      item.addEventListener("animationend",function(){
+        this.classList.remove("activeAnima")
+      })
     })
   }
 }
@@ -92,11 +95,16 @@ export default {
       background-color  #808080
 
 .activeAnima
-  animation active 0.5s ease  1 forwards
+  animation buttonClick 0.3s ease  1 forwards
 
-@keyframes active
+@keyframes buttonClick
   50%
     transform scale(1.2) 
   100%
     transform ""
+
+@media (max-width: $MQMobile)
+  .colorPicker
+    display none
+
 </style>

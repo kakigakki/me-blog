@@ -158,7 +158,7 @@ export default {
 
     a
       display block
-      color $textColor
+      color  var(--textColor)
       width 100%
       box-sizing border-box
       font-size 12px

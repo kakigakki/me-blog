@@ -155,7 +155,7 @@ export default {
 
   a
     cursor pointer
-    color $darkTextColor
+    color  var(--textColor)
     transition all 0.2s
     text-decoration none
 
@@ -164,7 +164,7 @@ export default {
 
 .ui-post-summary
   font-size 14px
-  color rgba($darkTextColor, 0.54)
+  color  var(--accentColor)
   font-weight 200
 
 .ui-post-meta
@@ -189,15 +189,15 @@ export default {
       margin-bottom 10px
 
 .ui-post-author
-  color rgba($darkTextColor, 0.84)
+  color var(--textColor)
   font-weight 400
 
 .ui-post-date
-  color rgba($darkTextColor, 0.54)
+  color rgba( 0,0,0, 0.54)
   font-weight 200
 
 .ui-post-tag
-  color rgba($darkTextColor, 0.54)
+  color rgba( 0,0,0, 0.54)
   font-weight 200
 
   a

@@ -74,7 +74,7 @@ export default {
     text-transform uppercase
 
     a
-      color $darkTextColor
+      color  var(--textColor)
       font-weight bold
       font-family PT Serif, Serif
       text-decoration none
@@ -119,7 +119,7 @@ export default {
         right 0
 
         a
-          color $darkTextColor
+          color  var(--textColor)
           text-decoration none
 
           &.focused

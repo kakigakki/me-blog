@@ -7,7 +7,9 @@
 
 :root{
   --accentColor:#f45b69
+  --textColor : #290025
 }
+
 html, body
   padding 0
   margin 0
@@ -17,7 +19,7 @@ body
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
   font-size 16px
-  color $textColor
+  color  var(--textColor)
   background-color $bgColor
 
 {$contentClass}:not(.custom)
