@@ -59,9 +59,9 @@ export default {
 
 <style lang="stylus">
 .nav-link
-  color  var(--textColor)
+  color  $codeBgColor
 
 .nav-link
   &:hover, &.router-link-active
-    color  var(--accentColor)
+    color  $accentColor
 </style>

@@ -6,8 +6,8 @@
 
 
 :root{
-  --accentColor:#f45b69
-  --textColor : #290025
+  --accentColor:#513a69
+  --textColor : #000
 }
 
 html, body
@@ -19,7 +19,7 @@ body
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
   font-size 16px
-  color  var(--textColor)
+  color  $codeBgColor
   background-color $bgColor
 
 {$contentClass}:not(.custom)
@@ -44,12 +44,12 @@ body
 
 a
   font-weight 500
-  color  var(--accentColor)
+  color  $accentColor
   text-decoration underline
 
 p a code
   font-weight 400
-  color  var(--accentColor)
+  color  $accentColor
 
 kbd
   background #eee
@@ -60,8 +60,8 @@ kbd
 
 blockquote
   font-size .9rem
-  color var(--accentColor)
-  border-left: 3px solid  var(--accentColor);
+  color $accentColor
+  border-left: 3px solid  $accentColor;
   margin 0.5rem 0
   padding .25rem 0 .25rem 1rem
 

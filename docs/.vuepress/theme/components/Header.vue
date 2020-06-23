@@ -74,7 +74,7 @@ export default {
     text-transform uppercase
 
     a
-      color  var(--textColor)
+      color  $codeBgColor
       font-weight bold
       font-family PT Serif, Serif
       text-decoration none
@@ -110,8 +110,8 @@ export default {
         border 1px solid #cecece
 
         &:hover
-          border 1px solid  var(--accentColor)
-          box-shadow 0 0 5px  var(--accentColor)
+          border 1px solid  $accentColor
+          box-shadow 0 0 5px  $accentColor
 
       .suggestions
         border 1px solid $darkBorderColor
@@ -119,11 +119,11 @@ export default {
         right 0
 
         a
-          color  var(--textColor)
+          color  $codeBgColor
           text-decoration none
 
           &.focused
-            color  var(--accentColor)
+            color  $accentColor
 
 @media (max-width: $MQMobile)
   #header

@@ -51,7 +51,7 @@ export default {
   font-size 16px
   letter-spacing 0px
   font-family PT Serif, Serif
-  color  var(--textColor)
+  color  $codeBgColor
   position relative
 
   @media (min-width: $MQNarrow)

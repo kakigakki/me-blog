@@ -14,22 +14,41 @@ export default {
   methods:{
     // Set a given theme/color-scheme
     setTheme(themeColor) {
-      localStorage.setItem('themeColor', themeColor);
-      document.body.style.setProperty('--accentColor',themeColor );
+      localStorage.setItem('accentColor', themeColor.accent);
+      localStorage.setItem('textColor', themeColor.text);
+      document.body.style.setProperty('--accentColor',themeColor.accent );
+      document.body.style.setProperty('--textColor',themeColor.text );
     },
     toggleColor(themeColor){
-      if (localStorage.getItem('theme') !== themeColor){
+      if (localStorage.getItem('accentColor') !== themeColor.accent){
         this.setTheme(themeColor);
       }
     }
   },
     data(){
     return {
-      defaultTheme:"#f45b69",
-      secondTheme:"#87d6b2",
-      thirdTheme:"#ffbf01",
-      forthTheme:"#b49c73",
-      fifthTheme:"#808080",
+      defaultTheme:{
+        accent:"#9d6381",
+        text:"#000"
+      },
+      secondTheme:{
+        accent:"#ee964b",
+        text:"#912f40"
+      },
+      thirdTheme:
+      {
+        accent:"#5c80bc",
+        text:"#2e5266"
+      },
+      forthTheme:
+      {
+        accent:"#0ead69",
+        text:"#5c5552"
+      },
+      fifthTheme:{
+        accent:"#db3a34",
+        text:"#585b56"
+      }
     }
   },
   mounted(){
@@ -42,6 +61,26 @@ export default {
         this.classList.remove("activeAnima")
       })
     })
+    let accentColor = localStorage.getItem('accentColor')
+    switch (accentColor) {
+      case this.defaultTheme.accent:
+        this.setTheme(this.defaultTheme)
+        break;
+      case this.secondTheme.accent:
+        this.setTheme(this.secondTheme)
+        break;
+      case this.thirdTheme.accent:
+        this.setTheme(this.thirdTheme)
+        break;
+      case this.forthTheme.accent:
+        this.setTheme(this.forthTheme)
+        break;
+      case this.fifthTheme.accent:
+        this.setTheme(this.fifthTheme)
+        break;
+      default:
+        break;
+    }
   }
 }
 </script>
@@ -70,29 +109,29 @@ export default {
       height 13px
 
   button:nth-child(1)
-    border-bottom 2px solid #f45b69
+    border-bottom 2px solid #540d6e
     &:hover
-      background-color #f45b69
+      background-color #540d6e
 
   button:nth-child(2)
-    border-bottom 2px solid  #87d6b2
+    border-bottom 2px solid  #ee964b
     &:hover
-      background-color #87d6b2
+      background-color #ee964b
   
   button:nth-child(3)
-    border-bottom 2px solid  #ffbf01
+    border-bottom 2px solid  #5c80bc
     &:hover
-      background-color  #ffbf01
+      background-color  #5c80bc
 
   button:nth-child(4)
-    border-bottom 2px solid  #b49c73
+    border-bottom 2px solid  #0ead69
     &:hover
-      background-color  #b49c73
+      background-color  #0ead69
 
   button:nth-child(5)
-    border-bottom 2px solid #808080
+    border-bottom 2px solid #db3a34
     &:hover
-      background-color  #808080
+      background-color  #db3a34
 
 .activeAnima
   animation buttonClick 0.3s ease  1 forwards

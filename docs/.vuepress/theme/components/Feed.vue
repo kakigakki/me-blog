@@ -40,5 +40,5 @@ export default {
   color inherit
 
   &:hover
-    color  var(--accentColor)
+    color  $accentColor
 </style>

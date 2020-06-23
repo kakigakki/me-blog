@@ -73,6 +73,7 @@
     <component
       :is="paginationComponent"
       v-if="$pagination.length > 1 && paginationComponent"
+      class="pagination"
     ></component>
   </div>
 </template>
@@ -155,7 +156,7 @@ export default {
 
   a
     cursor pointer
-    color  var(--textColor)
+    color  $codeBgColor
     transition all 0.2s
     text-decoration none
 
@@ -164,7 +165,7 @@ export default {
 
 .ui-post-summary
   font-size 14px
-  color  var(--accentColor)
+  color  $accentColor
   font-weight 200
 
 .ui-post-meta
@@ -189,7 +190,7 @@ export default {
       margin-bottom 10px
 
 .ui-post-author
-  color var(--textColor)
+  color $codeBgColor
   font-weight 400
 
 .ui-post-date
@@ -207,5 +208,5 @@ export default {
     margin-right 5px
 
     &:hover
-      color  var(--accentColor)
+      color  $accentColor
 </style>

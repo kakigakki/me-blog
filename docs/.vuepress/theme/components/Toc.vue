@@ -158,7 +158,7 @@ export default {
 
     a
       display block
-      color  var(--textColor)
+      color  $codeBgColor
       width 100%
       box-sizing border-box
       font-size 12px
@@ -170,14 +170,14 @@ export default {
       white-space nowrap
 
     &.active
-      border-left-color  var(--accentColor)
+      border-left-color  $accentColor
 
       a
-        color  var(--accentColor)
+        color  $accentColor
 
     &:hover
       a
-        color  var(--accentColor)
+        color  $accentColor
 
   for i in range(3, 6)
     .vuepress-toc-h{i} a

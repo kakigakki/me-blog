@@ -25,15 +25,15 @@ export default {
   text-align center
   box-sizing border-box
   transition background-color 0.3s
-  color  var(--textColor)
+  color  $codeBgColor
   border 1px solid $darkBorderColor
   text-decoration none
   transition all 0.5s
 
   &:hover
-    color  var(--accentColor) !important
-    border 1px solid  var(--accentColor)
-    box-shadow 0 0 5px  var(--accentColor)
+    color  $accentColor !important
+    border 1px solid  $accentColor
+    box-shadow 0 0 5px  $accentColor
 
 @media screen and (max-width: 768px)
   .blog-tag
