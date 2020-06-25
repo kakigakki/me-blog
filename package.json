@@ -62,7 +62,8 @@
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0",
     "sort-package-json": "^1.31.0",
-    "vuepress": "^1.2.0"
+    "vuepress": "^1.2.0",
+    "vuepress-plugin-container": "^2.1.4"
   },
   "peerDependencies": {
     "vuepress": "^1.0.0"
