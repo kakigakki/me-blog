@@ -37,3 +37,35 @@ toc : true
 1. typeof 函数 是function
 1. instanceof 数组和对象,能够区别
 1. 数组的this.contructor是数组函数
+
+### 利用Object.prototype.valueOf，动态改变函数内容
+
+1. 当需要一个函数，要满足能够无限调用，即可以有无限个`()`，且最后返回的是一个原始值时，就可以使用`valueOf`来修改函数返回的内容为原始值
+1. 在codeWars上看到了一个有意思的题目，就可以利用`valueOf`轻松实现
+1. 题目描述如下：
+::: tip
+创建一个函数，该函数满足下面条件：
+接受任意数量的参数，
+返回给定的每个参数的总和，
+任何不能解析为数字的参数都将计为0。
+可以无限调用，
+下一个函数调用将执行相同的操作，且与前一次结果求和，最后返回的数字。
+:::
+1. 代码：
+
+```js
+function MagicFunction(...args) {
+    let sum1 = 0
+    let f1 = (...args) => {
+        //将能转为数值的转为数值
+        sum1 += args.map(Number)
+            //排除NaN
+            .reduce((cur, prev) => {
+                return (!isNaN(prev) ? prev : 0) + cur
+            }, 0)
+        return f1
+    }
+    f1.valueOf = () => sum1 //利用valueOf重新声明f1函数，此时 f1.valueOf() == f1 为true
+    return f1(...args)
+}
+```
