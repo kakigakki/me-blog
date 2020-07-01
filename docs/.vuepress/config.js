@@ -14,6 +14,10 @@ module.exports = {
                 link: '/writings/'
             },
             {
+                text: '頑張ってね',
+                link: '/coding/'
+            },
+            {
                 text: '标签',
                 link: '/tag/'
             },

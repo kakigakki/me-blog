@@ -37,6 +37,11 @@ module.exports = themeConfig => {
                 id: 'writings',
                 dirname: 'writings',
                 path: '/writings/',
+            },
+            {
+                id: 'coding',
+                dirname: 'coding',
+                path: '/coding/',
             }
         ],
         frontmatters: [{
