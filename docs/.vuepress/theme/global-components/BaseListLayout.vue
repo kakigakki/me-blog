@@ -165,7 +165,7 @@ export default {
 
 .ui-post-summary
   font-size 14px
-  color  $accentColor
+  color  $textColor
   font-weight 200
 
 .ui-post-meta
