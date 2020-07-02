@@ -32,22 +32,22 @@ export default {
         text:"#000"
       },
       secondTheme:{
-        accent:"#ee964b",
-        text:"#912f40"
+        accent:"#7A663E",
+        text:"#132a13"
       },
       thirdTheme:
       {
         accent:"#5c80bc",
-        text:"#2e5266"
+        text:"#250902"
       },
       forthTheme:
       {
-        accent:"#0ead69",
-        text:"#5c5552"
+        accent:"#4C5F07",
+        text:"#353535"
       },
       fifthTheme:{
-        accent:"#db3a34",
-        text:"#585b56"
+        accent:"#A41613",
+        text:"#1c2541"
       }
     }
   },
@@ -114,9 +114,9 @@ export default {
       background-color #540d6e
 
   button:nth-child(2)
-    border-bottom 2px solid  #ee964b
+    border-bottom 2px solid  #7A663E
     &:hover
-      background-color #ee964b
+      background-color #7A663E
   
   button:nth-child(3)
     border-bottom 2px solid  #5c80bc
@@ -124,14 +124,14 @@ export default {
       background-color  #5c80bc
 
   button:nth-child(4)
-    border-bottom 2px solid  #0ead69
+    border-bottom 2px solid  #4C5F07
     &:hover
-      background-color  #0ead69
+      background-color  #4C5F07
 
   button:nth-child(5)
-    border-bottom 2px solid #db3a34
+    border-bottom 2px solid #A41613
     &:hover
-      background-color  #db3a34
+      background-color  #A41613
 
 .activeAnima
   animation buttonClick 0.3s ease  1 forwards

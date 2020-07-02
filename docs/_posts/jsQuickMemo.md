@@ -56,7 +56,7 @@ toc : true
 :::
 
 代码：
-::: 点击展开
+::: click
 
 ```js
 function MagicFunction(...args) {
@@ -76,5 +76,41 @@ function MagicFunction(...args) {
 ```
 
 :::
+
+### class与构造函数的区别
+
+- 大部分情况下，class只是构造函数的语法糖
+- class中直接定义的方法就是定义在`prototype`上的
+- class中直接定义的属性，就是实例属性，相当于`this.xxx`
+- class中定义的方法都是不可枚举的，构造方法的原型方法是可以枚举的
+- 在`constuctor`中定义属性`this.xxx = yyy`和在外面定义的`xxx=yyy`中是一样的
+- class不能不带`new`直接调用，会报错
+- 类在定义的时候不存在变量提升，这点与构造方法完全不同
+- 类中有静态属性/方法`static xxx = yyy` 表示该方法只能由类本身调用，实例中不存在
+- 类中有私有属性/属性（提案中）`#xxx = yyy` 表示该属性只能在类内部被调用(实例中虽然也有该属性，但是在类的外部也不能调用，可以通过传参将实例传进类内部调用该私有属性)
+- 类中也可以定义静态私有属性`static #xxx =yyy`
+- new命令的新属性`new.target`返回一个通过`new`或者`Reflect.constructor`创建的实例对象的类/构造函数
+ - 该属性可以判断一个构造函数/类是如何被调用的
+ - 该属性在子类继承父类时，new.target返回的是子类，利用这个特点，可以实现父类只能被继承，不能被实例化（有点像抽象类？）
+
+ ``` js
+class Shape {
+  constructor() {
+    if (new.target === Shape) {
+      throw new Error('本类不能实例化');
+    }
+  }
+}
+
+class Rectangle extends Shape {
+  constructor(length, width) {
+    super();
+    // ...
+  }
+}
+
+var x = new Shape();  // 报错
+var y = new Rectangle(3, 4);  // 正确
+ ```
 
 
