@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Linked List辅助函数 | KAKi BLOG</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="最近打算从头学算法，按照标签来刷题，从简单的链表题目开始，但是发现链表这东西因为javascript原生没有，所以调试时就需要转换为数值打印出来，但是转换数组每次手写也比较麻烦，就从网上扒了一些常用的辅助函数来帮助调试。以后做到其他数据结构的题目时，再继续补充其他的辅助函数。
+
+链表节点
+
+/**
+ 链表节点
+ @param {*} val
+ @param {List ...">
+    <link rel="preload" href="/me-blog/assets/css/0.styles.b94e7f37.css" as="style"><link rel="preload" href="/me-blog/assets/js/app.29948648.js" as="script"><link rel="preload" href="/me-blog/assets/js/6.3e27400f.js" as="script"><link rel="preload" href="/me-blog/assets/js/3.efc3e8a0.js" as="script"><link rel="preload" href="/me-blog/assets/js/12.3231daca.js" as="script"><link rel="prefetch" href="/me-blog/assets/js/10.768c8614.js"><link rel="prefetch" href="/me-blog/assets/js/11.55973fd1.js"><link rel="prefetch" href="/me-blog/assets/js/13.32188e04.js"><link rel="prefetch" href="/me-blog/assets/js/14.ca62cddf.js"><link rel="prefetch" href="/me-blog/assets/js/15.44542b58.js"><link rel="prefetch" href="/me-blog/assets/js/16.127fb3e8.js"><link rel="prefetch" href="/me-blog/assets/js/17.46db623a.js"><link rel="prefetch" href="/me-blog/assets/js/18.b700c13a.js"><link rel="prefetch" href="/me-blog/assets/js/19.4220b483.js"><link rel="prefetch" href="/me-blog/assets/js/20.4720ff54.js"><link rel="prefetch" href="/me-blog/assets/js/21.6939a682.js"><link rel="prefetch" href="/me-blog/assets/js/22.9732b54d.js"><link rel="prefetch" href="/me-blog/assets/js/23.6536af26.js"><link rel="prefetch" href="/me-blog/assets/js/24.243bf441.js"><link rel="prefetch" href="/me-blog/assets/js/4.60cbdfb6.js"><link rel="prefetch" href="/me-blog/assets/js/5.1ea66049.js"><link rel="prefetch" href="/me-blog/assets/js/7.fa4382d5.js"><link rel="prefetch" href="/me-blog/assets/js/8.19196c7c.js"><link rel="prefetch" href="/me-blog/assets/js/9.810c8971.js"><link rel="prefetch" href="/me-blog/assets/js/vuejs-paginate.3eb1ed69.js">
+    <link rel="stylesheet" href="/me-blog/assets/css/0.styles.b94e7f37.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/me-blog/" class="nav-link home-link">KAKi BLOG </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/me-blog/" class="nav-link">编程</a></li><li class="nav-item"><a href="/me-blog/writings/" class="nav-link">随笔</a></li><li class="nav-item"><a href="/me-blog/coding/" class="nav-link">頑張</a></li><li class="nav-item"><a href="/me-blog/tag/" class="nav-link">标签</a></li><li class="nav-item"><a href="https://github.com/kakigakki" target="_blank" rel="noopener noreferrer" class="nav-link external">github</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header> <div class="colorPicker themeColorPicker" data-v-7e42f9a3><button data-v-7e42f9a3></button> <button data-v-7e42f9a3></button> <button data-v-7e42f9a3></button> <button data-v-7e42f9a3></button> <button data-v-7e42f9a3></button></div></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/me-blog/" class="nav-link mobile-home-link">KAKi BLOG </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/me-blog/" class="nav-link">编程</a></li><li class="mobile-nav-item"><a href="/me-blog/writings/" class="nav-link">随笔</a></li><li class="mobile-nav-item"><a href="/me-blog/coding/" class="nav-link">頑張</a></li><li class="mobile-nav-item"><a href="/me-blog/tag/" class="nav-link">标签</a></li><li class="mobile-nav-item"><a href="https://github.com/kakigakki" target="_blank" rel="noopener noreferrer" class="nav-link external">github</a></li> <li class="mobile-nav-item"><!----></li></ul></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        Linked List辅助函数
+      </h1> <div class="post-meta"><div itemprop="publisher author" itemtype="http://schema.org/Person" itemscope="itemscope" class="post-meta-author"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg> <span itemprop="name">kaki</span> <span itemprop="address">   in Tokyo</span></div> <div class="post-meta-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2020-07-03T00:00:00.000Z">
+      Fri Jul 03 2020
+    </time></div> <ul itemprop="keywords" class="post-meta-tags"><li class="post-tag" data-v-4c1e2772><a href="/me-blog/tag/linkedList" data-v-4c1e2772><span data-v-4c1e2772>linkedList</span></a></li><li class="post-tag" data-v-4c1e2772><a href="/me-blog/tag/leetcode" data-v-4c1e2772><span data-v-4c1e2772>leetcode</span></a></li></ul></div></header> <div itemprop="articleBody" class="content__default"><p>最近打算从头学算法，按照标签来刷题，从简单的链表题目开始，但是发现链表这东西因为javascript原生没有，所以调试时就需要转换为数值打印出来，但是转换数组每次手写也比较麻烦，就从网上扒了一些常用的辅助函数来帮助调试。以后做到其他数据结构的题目时，再继续补充其他的辅助函数。</p> <h2 id="链表节点"><a href="#链表节点" class="header-anchor">#</a> 链表节点</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+ * 链表节点
+ * @param {*} val
+ * @param {ListNode} next
+ */</span>
+<span class="token keyword">function</span> <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token parameter">val<span class="token punctuation">,</span> next <span class="token operator">=</span> <span class="token keyword">null</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>val <span class="token operator">=</span> val<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>next <span class="token operator">=</span> next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="将一个数组转为链表"><a href="#将一个数组转为链表" class="header-anchor">#</a> 将一个数组转为链表</h2> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token comment">/**
+ * 将一个数组转为链表
+ * @param {array} a
+ * @return {ListNode}
+ */</span>
+<span class="token keyword">const</span> <span class="token function-variable function">getListFromArray</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">a</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> dummy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> pre <span class="token operator">=</span> dummy<span class="token punctuation">;</span>
+    a<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=&gt;</span> pre <span class="token operator">=</span> pre<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> dummy<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="将一个链表转为数组"><a href="#将一个链表转为数组" class="header-anchor">#</a> 将一个链表转为数组</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+ * @param {ListNode} node
+ * @return {array}
+ */</span>
+<span class="token keyword">const</span> <span class="token function-variable function">getArrayFromList</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>node<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        a<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        node <span class="token operator">=</span> node<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> a<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="打印一个链表"><a href="#打印一个链表" class="header-anchor">#</a> 打印一个链表</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+ * 打印一个链表
+ * @param {ListNode} node 
+ */</span>
+<span class="token keyword">const</span> <span class="token function-variable function">logList</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">'list: '</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>node<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        str <span class="token operator">+=</span> node<span class="token punctuation">.</span>val <span class="token operator">+</span> <span class="token string">'-&gt;'</span><span class="token punctuation">;</span>
+        node <span class="token operator">=</span> node<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    str <span class="token operator">+=</span> <span class="token string">'end'</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div></div> <footer><!----> <hr> <p class="lastUpdated">最後更新：今日 04:39</p> <!----></footer></article> <div class="sticker vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h2 active"><a href="#链表节点" title="链表节点">链表节点</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#将一个数组转为链表" title="将一个数组转为链表">将一个数组转为链表</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#将一个链表转为数组" title="将一个链表转为数组">将一个链表转为数组</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#打印一个链表" title="打印一个链表">打印一个链表</a></div></div></div></div> <footer class="footer" data-v-52309181><div class="footer-left-wrap" data-v-52309181><ul class="contact" data-v-52309181><li class="contact-item" data-v-52309181><a href="https://github.com/kakigakki" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-52309181><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github" data-v-52309181><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" data-v-52309181></path></svg>
+          
+        </a></li><li class="contact-item" data-v-52309181><a href="/me-blog/2020/07/03/linked-list%E5%88%B7%E9%A2%98%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0/kakigakki@gmail.com.html" class="nav-link" data-v-52309181><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail" data-v-52309181><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" data-v-52309181></path><polyline points="22,6 12,13 2,6" data-v-52309181></polyline></svg>
+          
+        </a></li></ul></div> <div class="footer-right-wrap" data-v-52309181><ul class="copyright" data-v-52309181></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/me-blog/assets/js/app.29948648.js" defer></script><script src="/me-blog/assets/js/6.3e27400f.js" defer></script><script src="/me-blog/assets/js/3.efc3e8a0.js" defer></script><script src="/me-blog/assets/js/12.3231daca.js" defer></script>
+  </body>
+</html>
