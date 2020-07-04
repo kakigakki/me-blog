@@ -60,5 +60,4 @@ background-image :liner-gradient(xxxdeg,rgba)
 background-image :liner-gradient(to right,rgba)
 background-image :liner-gradient(rgba,rgba,rgba) //相当于180deg
 background-image :liner-gradient(rgba 30%,rgba 70%,rgba 100%)
-background-image :liner-gradient(rgba 30%,rgba 70%,rgba 100%)
 ```
