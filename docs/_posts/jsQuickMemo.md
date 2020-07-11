@@ -78,7 +78,13 @@ function MagicFunction(...args) {
 
 :::
 
+<<<<<<< HEAD
+
 ## ES6 系列
+
+=======
+
+> > > > > > > 005fb9a98253ce0880573210fce131649dda0c3b
 
 ### class 与构造函数的区别
 
@@ -122,3 +128,23 @@ var y = new Rectangle(3, 4) // 正确
 - `async`总是返回一个`Promise`对象,且 return 后的语句总是作为 then 的回调的参数
 - `await`后面如果是 Promise 对象(或 thenable 对象),返回该对象的 `resolve()参数`,如果是数值字符之类的,则就是返回其值
 - 任何一个`await`语句后面的`Promise`对象变为`reject`状态，那么整个`async`函数都会中断执行。
+
+### ES6 模块化与 CommonJS 的区别
+
+- ES6 的`export`语法主要为以下几种
+
+```JS
+//直接导出
+export var x1 =x
+export function x2(){}
+
+//先声明再导出,一般用此方法
+var y1 = y
+function y2{}
+export {y1,y2}
+
+//取别名后导出
+  var y1 = y
+function y2{}
+export {y1 as bar,y2 as foo}
+```
