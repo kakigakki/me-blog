@@ -78,13 +78,7 @@ function MagicFunction(...args) {
 
 :::
 
-<<<<<<< HEAD
-
 ## ES6 系列
-
-=======
-
-> > > > > > > 005fb9a98253ce0880573210fce131649dda0c3b
 
 ### class 与构造函数的区别
 
