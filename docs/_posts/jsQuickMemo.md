@@ -142,3 +142,8 @@ export {y1,y2}
 function y2{}
 export {y1 as bar,y2 as foo}
 ```
+
+### proxy 与 reflect
+
+- `proxy`跟`reflect`都有 13 个静态方法
+- `set(target, name, value, receiver)`和`get(target, name, value, receiver)`中的`reciver`总是指向 proxy 实例
