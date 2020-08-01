@@ -59,3 +59,51 @@ toc: true
 - 禁止 DOM 的一切事件 : `pointer-events:none`
 - 禁止 input 操作: `<input disabled></input>`
   - input 元素，不可编辑，不可复制，不可选择，不能接收焦点,，后台不能接收到传值
+
+### 原地按比例缩放背景图片
+
+```css
+/* 按10比7的比例缩小图片 */
+.bg {
+  width: 100%;
+  height: 0;
+  padding-top: 70%;
+  background-size: cover;
+}
+```
+
+### 任意位置插入带图标,文本小部件的方案
+
+```css
+.play-wrapper {
+  position: absolute;
+  bottom: 20px;
+  z-index: 10;
+  width: 100%;
+
+  .play {
+    box-sizing: border-box;
+    width: 135px;
+    padding: 7px 0;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid blue;
+    color: blue;
+    border-radius: 100px;
+    font-size: 0;
+
+    .icon-play {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 6px;
+      font-size: 18px;
+    }
+
+    .text {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 16px;
+    }
+  }
+}
+```
