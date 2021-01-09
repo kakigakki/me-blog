@@ -130,15 +130,148 @@ toc: true
 - `&`
 
   ```ts
-  let a = { name: string } & { age: number }
+  let a: { name: string } & { age: number }
   let a = { name: 'heyi', age: 12 }
   ```
 
-### 类型别名
+### 类型声明
 
 如果联合类型太长，可以把类型取个别名
 
 ```ts
 type myType = string | number | boolean
 let a: myType
+```
+
+或者可以用别名来描述一个对象的类型
+
+```ts
+type student = { name: string; age: number }
+
+const stu1: student = { name: 'kaki', age: 18 }
+```
+
+## 基本配置
+
+### 基本配置文件
+
+根目录下可以配置`tsconfig.json`,ts 编译器的配置文件，ts 编译器可以根据它的信息来进行编译
+
+属性：
+
+- include : 可以指定选择哪些路径下的 ts 文件进行编译
+- exclude ：指定不进行编译的 ts
+- extends ：定义被继承的配置文件
+- **compilerOotions**
+
+  - target : 编译后的 js 的版本（默认 ES3）
+
+    ```js
+    target: 'ES6'
+    ```
+
+  - module : 指定要使用的模块化的规范
+
+    ```js
+    module: 'ES6' //commonjs,amd,es6
+    ```
+
+  - lib : 指定项目中要使用的库（一般不需要设置）
+  - outDir : 编译后的 js 的输出目录
+  - outFile : 将全局作用域的代码的多个文件合并成一个文件
+  - allowJs :是否对 js 进行编译，默认是 false
+  - checkJs : 是否检查 js 代码的语法，默认是 false
+  - removeComment : 编译后是否删除注释，默认 false
+  - noEmit : 不生成编译后的文件，默认 false
+  - noEmitOnError:当编译错误时，不生产编译后的文件，默认 false
+  - alwaysStrict : 设置编译后的文件是否使用严格模式，默认 false
+  - noImplicitAny : 不允许隐式的 any 类型
+  - noImplicitThis : 不允许不明确的 this
+
+## 面向对象
+
+### 抽象类
+
+Typescript 中可以定义抽象类:不能创建实例，只能被继承
+
+```ts
+abstract class Animal(){
+
+  //抽象中可以定义抽象方法
+  //子类必须对抽象方法进行抽象
+  abstract run():void
+}
+```
+
+### 接口
+
+Typescript 中也可以定义接口:用来定义一个类中应该包含哪些属性与方法，同时接口也可以当作类型声明`type`使用
+
+- 接口中的所有属性都不能有实际的值
+- 接口只定义对象的结构，而不考虑实际值
+
+```ts
+interface people {
+  name: string
+  gender: string
+  speak():void
+}
+
+//实现一个接口，必须实现接口的所有属性与方法
+class student implements people{
+  name:string,
+  gender:string
+  speak(){
+    console.log("speak")
+  }
+}
+```
+
+### 修饰符
+
+Typescript 跟其他后端语言一样，也能对类中的属性和方法进行修饰
+
+- private ： 内部属性，只能类的内部访问修改
+- protected: 能在当前类，和当前类的子类中访问修改
+- public(默认)
+
+Typescript 提供了创建类的语法糖
+
+```ts
+class People {
+  name: string
+  age: number
+  constructor(name: string, age: number) {
+    this.name = name
+    this.age = age
+  }
+}
+
+//下面这种写法等于上面
+class People {
+  constructor(public name: string, public age: number) {}
+}
+```
+
+### 泛型
+
+定义函数或者类时，如果遇到类型不明确，就可以使用泛型
+
+```ts
+function fn<T>(a: T): T {
+  return a
+}
+
+class People<T> {
+  name: T
+  constructor(name: T) {
+    this.name = name
+  }
+}
+
+//不指定泛型调用时，ts可以自动对类型进行推断
+let res = fn(10)
+
+//也指定泛型调用
+let res = fn<string>('kaki')
 ```
