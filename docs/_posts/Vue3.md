@@ -66,6 +66,23 @@ setup 中有两个参数`props`与`context`
   - 如果需要对数据进行操作，需要使用该 Ref 对象调用 value 属性
   - html 模板中不需要使用调用 value 属性
 - 一般用于基本类型的响应式设定
+- vue2 中的`this.$ref`也是用这个`ref`来实现
+
+  ```js
+
+  <input ref="myInput"></input>
+
+  setup(){
+    const myInput = ref(null)
+    onMounted(()=>{
+      myInput.value.focus()
+    })
+    return{
+      myInput
+    }
+  }
+
+  ```
 
 #### 细节
 
@@ -140,3 +157,22 @@ setup 中有两个参数`props`与`context`
     name.value = name1 + age
   })
   ```
+
+### shallowReactive && shallowRef
+
+浅劫持，浅监视。有时候为了提高性能，不需要深层次监视某个对象时，可以使用
+
+### readonly && shallowReadonly
+
+- `readonly(obj)`定义一个对象为只读，无法进行修改（深）
+- `shallowReadonly(obj)` 定义一个对象为只读，无法进行修改（浅）
+
+### toRaw && markRaw
+
+- `toRaw(obj)` 将代理对象变为普通对象，即数据变化，界面不再变化
+- `obj.list = markRaw([1,2,3,4])` 将代理对象的某个数据弄成非响应式数据
+
+### toRef
+
+- `toRef(proxy,val)`将响应式对象的属性变成 ref 对象
+  当父子组件传递`prop属性`时，子组件接收到的父组件的 ref 对象的值时，一般都会接收到 `ref`的`value`，此时希望在子组件中将此数据变成 ref 对象，且与父组件相互响应时，则可以使用`toRef`
