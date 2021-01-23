@@ -176,3 +176,80 @@ setup 中有两个参数`props`与`context`
 
 - `toRef(proxy,val)`将响应式对象的属性变成 ref 对象
   当父子组件传递`prop属性`时，子组件接收到的父组件的 ref 对象的值时，一般都会接收到 `ref`的`value`，此时希望在子组件中将此数据变成 ref 对象，且与父组件相互响应时，则可以使用`toRef`
+
+### provide && inject
+
+能够提供祖父与孙子组件之间的通信
+
+```js
+//祖父组件中提供
+provide('color', ref('red'))
+
+//孙子组件中注入
+const xx = inject('color')
+```
+
+### isRef && isReactive && isReadonly && isProxy
+
+- `isRef`:检查一个值是否为一个 ref 对象
+- `isReactive`：检查一个对象是否为 reactive 创建的响应式代理
+- `isReadonly`：检查一个对象是否是由 readonly 创建的只读代理
+- `isProxy`：检查一个对象是否是由 reactive 或者 readonly 方法创建的代理
+
+### 手写组合 API
+
+#### shallowReactive && reactive
+
+主要用`proxy`与`reflect`进行手写
+
+#### shallowReadonly && readonly
+
+主要用`proxy`与`reflect`进行手写
+
+#### shallowRef && ref
+
+主要利用`get`和`set`进行手写
+
+#### isRef,isReactive,isReadonly,isProxy
+
+主要在创建内部对象时创建内部属性进行判断
+
+### fragment && teleport
+
+- `fragment` 组件可以没有根标签，内部会将多个标签包含在一个 Fragment 虚拟元素中，可以减少标签层级，减少内存占用
+- `teleport`标签 可以让某段 html 跑到指定位置
+
+  ```js
+  <teleport to:"body"></teleport>
+  ```
+
+### Suspense
+
+允许我们的应用程序在等待异步组件的时候，渲染一些后备内容，可以让我们创建一个平滑的用户体验
+vue3 中动态引入组件与 vue2 中有所不同
+
+```js
+//父组件中html
+<Suspense>
+  <template v-slot:default> //或者写成#default
+    <AsyncComp></AsyncComp>
+  </template>
+  <template v-slot:fallback>
+    loading
+  </template>
+</Suspense>
+
+//动态组件依旧是异步的
+const AsyncComp = definedAsyncComponent(() =>i mport('xxx'))
+```
+
+```js
+//如果组件中的setup返回的是promise对象，那么此组件也是异步组件
+//AsyncComp组件中setup
+async setup(){
+  const res = await axios.get(url)
+  return {
+    data:res.data
+  }
+}
+```
