@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>C#重学笔记 | KAKi BLOG</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="
+
+跟 java 中的数据类型大致一样.c#中有无符号类型，只表示正数
+20210209000103
+
+操作符
+
+c#中的操作符本质是函数
+
+属性
+
+c++和 java 中只有字段，没有属性这个东西。对字段进行封 ...">
+    <link rel="preload" href="/me-blog/assets/css/0.styles.b94e7f37.css" as="style"><link rel="preload" href="/me-blog/assets/js/app.6f1556c9.js" as="script"><link rel="preload" href="/me-blog/assets/js/6.3e27400f.js" as="script"><link rel="preload" href="/me-blog/assets/js/3.efc3e8a0.js" as="script"><link rel="preload" href="/me-blog/assets/js/12.fc03306e.js" as="script"><link rel="prefetch" href="/me-blog/assets/js/10.768c8614.js"><link rel="prefetch" href="/me-blog/assets/js/11.55973fd1.js"><link rel="prefetch" href="/me-blog/assets/js/13.074c7d5e.js"><link rel="prefetch" href="/me-blog/assets/js/14.f10ff561.js"><link rel="prefetch" href="/me-blog/assets/js/15.21956d84.js"><link rel="prefetch" href="/me-blog/assets/js/16.c2f6910f.js"><link rel="prefetch" href="/me-blog/assets/js/17.256a99f5.js"><link rel="prefetch" href="/me-blog/assets/js/18.244c3875.js"><link rel="prefetch" href="/me-blog/assets/js/19.b1063a52.js"><link rel="prefetch" href="/me-blog/assets/js/20.4e4928e6.js"><link rel="prefetch" href="/me-blog/assets/js/21.58e8375b.js"><link rel="prefetch" href="/me-blog/assets/js/22.55839fff.js"><link rel="prefetch" href="/me-blog/assets/js/23.08f0154e.js"><link rel="prefetch" href="/me-blog/assets/js/24.cb23462e.js"><link rel="prefetch" href="/me-blog/assets/js/25.baee68c3.js"><link rel="prefetch" href="/me-blog/assets/js/26.ceed61bc.js"><link rel="prefetch" href="/me-blog/assets/js/27.adaf180e.js"><link rel="prefetch" href="/me-blog/assets/js/28.97165587.js"><link rel="prefetch" href="/me-blog/assets/js/29.3c9632eb.js"><link rel="prefetch" href="/me-blog/assets/js/30.fc0afdfd.js"><link rel="prefetch" href="/me-blog/assets/js/31.863c9577.js"><link rel="prefetch" href="/me-blog/assets/js/4.1c07087f.js"><link rel="prefetch" href="/me-blog/assets/js/5.94185923.js"><link rel="prefetch" href="/me-blog/assets/js/7.fa4382d5.js"><link rel="prefetch" href="/me-blog/assets/js/8.19196c7c.js"><link rel="prefetch" href="/me-blog/assets/js/9.810c8971.js"><link rel="prefetch" href="/me-blog/assets/js/vuejs-paginate.3eb1ed69.js">
+    <link rel="stylesheet" href="/me-blog/assets/css/0.styles.b94e7f37.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/me-blog/" class="nav-link home-link">KAKi BLOG </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/me-blog/" class="nav-link">编程</a></li><li class="nav-item"><a href="/me-blog/writings/" class="nav-link">随笔</a></li><li class="nav-item"><a href="/me-blog/coding/" class="nav-link">頑張</a></li><li class="nav-item"><a href="/me-blog/tag/" class="nav-link">标签</a></li><li class="nav-item"><a href="https://github.com/kakigakki" target="_blank" rel="noopener noreferrer" class="nav-link external">github</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header> <div class="colorPicker themeColorPicker" data-v-7e42f9a3><button data-v-7e42f9a3></button> <button data-v-7e42f9a3></button> <button data-v-7e42f9a3></button> <button data-v-7e42f9a3></button> <button data-v-7e42f9a3></button></div></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/me-blog/" class="nav-link mobile-home-link">KAKi BLOG </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/me-blog/" class="nav-link">编程</a></li><li class="mobile-nav-item"><a href="/me-blog/writings/" class="nav-link">随笔</a></li><li class="mobile-nav-item"><a href="/me-blog/coding/" class="nav-link">頑張</a></li><li class="mobile-nav-item"><a href="/me-blog/tag/" class="nav-link">标签</a></li><li class="mobile-nav-item"><a href="https://github.com/kakigakki" target="_blank" rel="noopener noreferrer" class="nav-link external">github</a></li> <li class="mobile-nav-item"><!----></li></ul></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        C#重学笔记
+      </h1> <div class="post-meta"><div itemprop="publisher author" itemtype="http://schema.org/Person" itemscope="itemscope" class="post-meta-author"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg> <span itemprop="name">kaki</span> <span itemprop="address">   in Tokyo</span></div> <div class="post-meta-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2021-02-08T00:00:00.000Z">
+      Mon Feb 08 2021
+    </time></div> <ul itemprop="keywords" class="post-meta-tags"><li class="post-tag" data-v-4c1e2772><a href="/me-blog/tag/C#" data-v-4c1e2772><span data-v-4c1e2772>C#</span></a></li></ul></div></header> <div itemprop="articleBody" class="content__default"><h3 id="数据类型"><a href="#数据类型" class="header-anchor">#</a> 数据类型</h3> <p>跟 java 中的数据类型大致一样.c#中有无符号类型，只表示正数
+<img src="https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20210209000103.png" alt="20210209000103"></p> <h3 id="操作符"><a href="#操作符" class="header-anchor">#</a> 操作符</h3> <p>c#中的操作符本质是函数</p> <h3 id="属性"><a href="#属性" class="header-anchor">#</a> 属性</h3> <p>c++和 java 中只有字段，没有属性这个东西。对字段进行封装一般用 set,get 方法。但是 c#中有属性。相当于 set,get 的语法糖。永远使用属性而不是字段来暴露内容。即字段最好永远是<code>protected</code>或者<code>private</code></p> <ul><li><p>可以使用<code>propfull</code>快速创建上面的属性的完整声明模板</p> <div class="language-c# extra-class"><pre class="language-text"><code>private int age //字段用驼峰
+public int Age{ //属性用首字母大写
+get{
+  return this.age
+}
+
+set{
+  ...
+}
+}
+</code></pre></div></li> <li><p>使用<code>prop</code>快速属性的简略声明模板</p> <div class="language-c# extra-class"><pre class="language-text"><code>public int Age{get;set;}
+</code></pre></div></li></ul> <h3 id="索引器"><a href="#索引器" class="header-anchor">#</a> 索引器</h3> <p>使用<code>ind</code>来快速创建索引器</p> <div class="language-c# extra-class"><pre class="language-text"><code>public object this[int index]{
+  get{}
+  set{}
+}
+</code></pre></div><h3 id="常量"><a href="#常量" class="header-anchor">#</a> 常量</h3> <p>常量跟静态变量一样，都是属于类，而不是实例的。因为他不会变，所以如果属于实例，影响性能.常量的目的一般就是提高执行效率与可读性</p> <div class="language-c# extra-class"><pre class="language-text"><code>public const double PI= 3.1415926
+</code></pre></div><h3 id="参数"><a href="#参数" class="header-anchor">#</a> 参数</h3> <ul><li><p>传值参数</p> <ul><li>值类型 ： 传变量副本</li> <li>引用类型 ： 传变量的内存地址</li></ul></li> <li><p>引用参数：不论时值类型还是引用类型参数都与变量指向内存中的同一个地址，即使引用参数在方法体中被换成另一个引用，方法体外的引用变量也会变。</p></li> <li><p>输出参数
+方法体内给输出参数赋值且必须赋值，否则编译过不去</p></li> <li><p>数组参数:params 参数
+参数列表中只能有一个，且必须在最后</p> <div class="language-c# extra-class"><pre class="language-text"><code>public int testArrParams(params int[] array)
+
+testArrParams(1,2,3,4)
+</code></pre></div></li> <li><p>具名参数
+可以增加代码的可读性，使用具名参数，参数可以不按顺序写</p> <div class="language-c# extra-class"><pre class="language-text"><code>public int test(string name,int age)
+
+test(age:18,name:&quot;kaki&quot;)
+
+</code></pre></div></li> <li><p>扩展方法（this 参数）</p> <div class="language-c# extra-class"><pre class="language-text"><code>static class DoubleExtension{
+  public static double Round(this double input,int digits)
+}
+
+static void Main(string[] args){
+  double x = 3.14159
+  //此时x可以用Round是因为上文拓展方法的定义
+  double y = x.Round(4)
+}
+</code></pre></div><p>注意点：</p> <ul><li>方法必须是共有，静态的。即被<code>public static</code>修饰的</li> <li>必须是形参列表中的第一个，由 this 修饰</li> <li>必须由一个静态类（一般类名为 someTypeExtension）来统一收纳对 some type 类型的拓展方法</li> <li>经典例子：<code>LINQ</code></li></ul></li></ul></div> <footer><!----> <hr> <p class="lastUpdated">最後更新：今日 13:30</p> <!----></footer></article> <div class="sticker vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h3 active"><a href="#数据类型" title="数据类型">数据类型</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#操作符" title="操作符">操作符</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#属性" title="属性">属性</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#索引器" title="索引器">索引器</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#常量" title="常量">常量</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#参数" title="参数">参数</a></div></div></div></div> <footer class="footer" data-v-52309181><div class="footer-left-wrap" data-v-52309181><ul class="contact" data-v-52309181><li class="contact-item" data-v-52309181><a href="https://github.com/kakigakki" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-52309181><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github" data-v-52309181><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" data-v-52309181></path></svg>
+          
+        </a></li><li class="contact-item" data-v-52309181><a href="/me-blog/2021/02/08/c-%E9%87%8D%E5%AD%A6%E7%AC%94%E8%AE%B0/kakigakki@gmail.com.html" class="nav-link" data-v-52309181><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail" data-v-52309181><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" data-v-52309181></path><polyline points="22,6 12,13 2,6" data-v-52309181></polyline></svg>
+          
+        </a></li></ul></div> <div class="footer-right-wrap" data-v-52309181><ul class="copyright" data-v-52309181></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/me-blog/assets/js/app.6f1556c9.js" defer></script><script src="/me-blog/assets/js/6.3e27400f.js" defer></script><script src="/me-blog/assets/js/3.efc3e8a0.js" defer></script><script src="/me-blog/assets/js/12.fc03306e.js" defer></script>
+  </body>
+</html>
