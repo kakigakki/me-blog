@@ -18,7 +18,7 @@ c#中的操作符本质是函数
 属性
 
 c++和 java 中只有字段，没有属性这个东西。对字段进行封 ...">
-    <link rel="preload" href="/me-blog/assets/css/0.styles.b94e7f37.css" as="style"><link rel="preload" href="/me-blog/assets/js/app.f062d237.js" as="script"><link rel="preload" href="/me-blog/assets/js/6.3e27400f.js" as="script"><link rel="preload" href="/me-blog/assets/js/3.efc3e8a0.js" as="script"><link rel="preload" href="/me-blog/assets/js/12.1e1bfc1a.js" as="script"><link rel="prefetch" href="/me-blog/assets/js/10.768c8614.js"><link rel="prefetch" href="/me-blog/assets/js/11.55973fd1.js"><link rel="prefetch" href="/me-blog/assets/js/13.074c7d5e.js"><link rel="prefetch" href="/me-blog/assets/js/14.f10ff561.js"><link rel="prefetch" href="/me-blog/assets/js/15.21956d84.js"><link rel="prefetch" href="/me-blog/assets/js/16.c2f6910f.js"><link rel="prefetch" href="/me-blog/assets/js/17.256a99f5.js"><link rel="prefetch" href="/me-blog/assets/js/18.244c3875.js"><link rel="prefetch" href="/me-blog/assets/js/19.b1063a52.js"><link rel="prefetch" href="/me-blog/assets/js/20.4e4928e6.js"><link rel="prefetch" href="/me-blog/assets/js/21.58e8375b.js"><link rel="prefetch" href="/me-blog/assets/js/22.55839fff.js"><link rel="prefetch" href="/me-blog/assets/js/23.08f0154e.js"><link rel="prefetch" href="/me-blog/assets/js/24.cb23462e.js"><link rel="prefetch" href="/me-blog/assets/js/25.baee68c3.js"><link rel="prefetch" href="/me-blog/assets/js/26.ceed61bc.js"><link rel="prefetch" href="/me-blog/assets/js/27.adaf180e.js"><link rel="prefetch" href="/me-blog/assets/js/28.97165587.js"><link rel="prefetch" href="/me-blog/assets/js/29.3c9632eb.js"><link rel="prefetch" href="/me-blog/assets/js/30.fc0afdfd.js"><link rel="prefetch" href="/me-blog/assets/js/31.863c9577.js"><link rel="prefetch" href="/me-blog/assets/js/4.1c07087f.js"><link rel="prefetch" href="/me-blog/assets/js/5.94185923.js"><link rel="prefetch" href="/me-blog/assets/js/7.fa4382d5.js"><link rel="prefetch" href="/me-blog/assets/js/8.19196c7c.js"><link rel="prefetch" href="/me-blog/assets/js/9.810c8971.js"><link rel="prefetch" href="/me-blog/assets/js/vuejs-paginate.3eb1ed69.js">
+    <link rel="preload" href="/me-blog/assets/css/0.styles.b94e7f37.css" as="style"><link rel="preload" href="/me-blog/assets/js/app.31e30d53.js" as="script"><link rel="preload" href="/me-blog/assets/js/6.3e27400f.js" as="script"><link rel="preload" href="/me-blog/assets/js/3.efc3e8a0.js" as="script"><link rel="preload" href="/me-blog/assets/js/12.8a4ae32f.js" as="script"><link rel="prefetch" href="/me-blog/assets/js/10.768c8614.js"><link rel="prefetch" href="/me-blog/assets/js/11.55973fd1.js"><link rel="prefetch" href="/me-blog/assets/js/13.074c7d5e.js"><link rel="prefetch" href="/me-blog/assets/js/14.f10ff561.js"><link rel="prefetch" href="/me-blog/assets/js/15.21956d84.js"><link rel="prefetch" href="/me-blog/assets/js/16.c2f6910f.js"><link rel="prefetch" href="/me-blog/assets/js/17.256a99f5.js"><link rel="prefetch" href="/me-blog/assets/js/18.244c3875.js"><link rel="prefetch" href="/me-blog/assets/js/19.b1063a52.js"><link rel="prefetch" href="/me-blog/assets/js/20.4e4928e6.js"><link rel="prefetch" href="/me-blog/assets/js/21.7d31ecda.js"><link rel="prefetch" href="/me-blog/assets/js/22.d0657925.js"><link rel="prefetch" href="/me-blog/assets/js/23.e6083735.js"><link rel="prefetch" href="/me-blog/assets/js/24.f9de539f.js"><link rel="prefetch" href="/me-blog/assets/js/25.e0f31c06.js"><link rel="prefetch" href="/me-blog/assets/js/26.094ccb54.js"><link rel="prefetch" href="/me-blog/assets/js/27.4dc52473.js"><link rel="prefetch" href="/me-blog/assets/js/28.a9fb16bb.js"><link rel="prefetch" href="/me-blog/assets/js/29.dfb884ad.js"><link rel="prefetch" href="/me-blog/assets/js/30.e0c9464c.js"><link rel="prefetch" href="/me-blog/assets/js/31.d72e844f.js"><link rel="prefetch" href="/me-blog/assets/js/32.22bd6d26.js"><link rel="prefetch" href="/me-blog/assets/js/4.1c07087f.js"><link rel="prefetch" href="/me-blog/assets/js/5.94185923.js"><link rel="prefetch" href="/me-blog/assets/js/7.fa4382d5.js"><link rel="prefetch" href="/me-blog/assets/js/8.19196c7c.js"><link rel="prefetch" href="/me-blog/assets/js/9.810c8971.js"><link rel="prefetch" href="/me-blog/assets/js/vuejs-paginate.3eb1ed69.js">
     <link rel="stylesheet" href="/me-blog/assets/css/0.styles.b94e7f37.css">
   </head>
   <body>
@@ -79,11 +79,45 @@ action1.invoke()//此时，123会按顺序执行
 action2.beginInvoke()
 action3.beginInvoke()
 
-</code></pre></div><h4 id="委托的替代"><a href="#委托的替代" class="header-anchor">#</a> 委托的替代</h4> <p>项目中最好使用<code>接口</code>代替<code>委托</code></p></div> <footer><!----> <hr> <p class="lastUpdated">最後更新：今日 14:20</p> <!----></footer></article> <div class="sticker vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h3 active"><a href="#数据类型" title="数据类型">数据类型</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#操作符" title="操作符">操作符</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#属性" title="属性">属性</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#索引器" title="索引器">索引器</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#常量" title="常量">常量</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#参数" title="参数">参数</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#委托" title="委托">委托</a></div></div></div></div> <footer class="footer" data-v-52309181><div class="footer-left-wrap" data-v-52309181><ul class="contact" data-v-52309181><li class="contact-item" data-v-52309181><a href="https://github.com/kakigakki" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-52309181><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github" data-v-52309181><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" data-v-52309181></path></svg>
+</code></pre></div><h4 id="委托的替代"><a href="#委托的替代" class="header-anchor">#</a> 委托的替代</h4> <p>项目中最好使用<code>接口</code>代替<code>委托</code></p> <h4 id="事件"><a href="#事件" class="header-anchor">#</a> 事件</h4> <p>事件多用于桌面，手机，web 等开发的客户端编程。
+<code>MVP,MVC,MVVM</code>都是从事件驱动模型烟花过来的</p> <p><img src="https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20210217222834.png" alt="20210217222834"></p> <div class="language-c# extra-class"><pre class="language-text"><code>
+ //事件拥有者timer
+ Timer timer = new Timer();
+ //事件订阅者为boy
+ Boy boy = new Boy();
+ //事件为Elapsed ，事件订阅为+= ，事件处理器为action
+  timer.Elapsed += boy.action;
+
+  private void action(Object sender,EventArgs e){
+    //处理逻辑
+  }
+
+</code></pre></div><p>还可以使用<code>lanmda</code>表达式挂事件响应器</p> <div class="language-c# extra-class"><pre class="language-text"><code>//简单快捷，且参数不需要再写类型
+timer.Elapsed += (sender,e)=&gt;{
+  //处理逻辑
+}
+</code></pre></div><h4 id="自定义事件"><a href="#自定义事件" class="header-anchor">#</a> 自定义事件</h4> <ol><li>使用事件必须先声明委托类型</li></ol> <div class="language-c# extra-class"><pre class="language-text"><code>    //想要自定义事件，必须要有委托类型，可以声明下面的自定义委托
+    public delegate void OrderEventHandler(Customer c, OrderEventArgs e);
+
+    //也可以用c#提供的万能委托
+    public delegate void EventHandler(Object Sender, EventArgs e);
+
+</code></pre></div><p>1.声明事件</p> <div class="language-c# extra-class"><pre class="language-text"><code>//先声明委托字段
+private OrderEventHandler orderEventHandler
+//再声明事件
+public event OrderEventHandler Order{
+  add{
+    this.orderEventHandler +=value;
+  }
+  remove{
+    this.orderEventHandler -=value;
+  }
+}
+</code></pre></div><ol><li>事件委托的参数一般有两个</li></ol> <ul><li>第一个是 Object 类型，就是事件的拥有者</li> <li>第二个是 EventArgs 类的派生类，就是事件参数</li></ul> <h3 id="vs-的使用技巧"><a href="#vs-的使用技巧" class="header-anchor">#</a> VS 的使用技巧</h3> <ol><li>F2 可以重命名所有同名内容</li> <li>创建事件响应器时:<code>+=</code>后 Tab 两次会自动创建响应器方法</li></ol></div> <footer><!----> <hr> <p class="lastUpdated">最後更新：今日 13:24</p> <!----></footer></article> <div class="sticker vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h3 active"><a href="#数据类型" title="数据类型">数据类型</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#操作符" title="操作符">操作符</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#属性" title="属性">属性</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#索引器" title="索引器">索引器</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#常量" title="常量">常量</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#参数" title="参数">参数</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#委托" title="委托">委托</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#vs-的使用技巧" title="VS 的使用技巧">VS 的使用技巧</a></div></div></div></div> <footer class="footer" data-v-52309181><div class="footer-left-wrap" data-v-52309181><ul class="contact" data-v-52309181><li class="contact-item" data-v-52309181><a href="https://github.com/kakigakki" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-52309181><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github" data-v-52309181><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" data-v-52309181></path></svg>
           
         </a></li><li class="contact-item" data-v-52309181><a href="/me-blog/2021/02/08/c-%E9%87%8D%E5%AD%A6%E7%AC%94%E8%AE%B0/kakigakki@gmail.com.html" class="nav-link" data-v-52309181><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail" data-v-52309181><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" data-v-52309181></path><polyline points="22,6 12,13 2,6" data-v-52309181></polyline></svg>
           
         </a></li></ul></div> <div class="footer-right-wrap" data-v-52309181><ul class="copyright" data-v-52309181></ul></div></footer></div><div class="global-ui"></div></div>
-    <script src="/me-blog/assets/js/app.f062d237.js" defer></script><script src="/me-blog/assets/js/6.3e27400f.js" defer></script><script src="/me-blog/assets/js/3.efc3e8a0.js" defer></script><script src="/me-blog/assets/js/12.1e1bfc1a.js" defer></script>
+    <script src="/me-blog/assets/js/app.31e30d53.js" defer></script><script src="/me-blog/assets/js/6.3e27400f.js" defer></script><script src="/me-blog/assets/js/3.efc3e8a0.js" defer></script><script src="/me-blog/assets/js/12.8a4ae32f.js" defer></script>
   </body>
 </html>
