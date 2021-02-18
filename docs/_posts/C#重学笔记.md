@@ -174,3 +174,73 @@ action3.beginInvoke()
 #### 委托的替代
 
 项目中最好使用`接口`代替`委托`
+
+#### 事件
+
+事件多用于桌面，手机，web 等开发的客户端编程。
+`MVP,MVC,MVVM`都是从事件驱动模型烟花过来的
+
+![20210217222834](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20210217222834.png)
+
+```c#
+
+ //事件拥有者timer
+ Timer timer = new Timer();
+ //事件订阅者为boy
+ Boy boy = new Boy();
+ //事件为Elapsed ，事件订阅为+= ，事件处理器为action
+  timer.Elapsed += boy.action;
+
+  private void action(Object sender,EventArgs e){
+    //处理逻辑
+  }
+
+```
+
+还可以使用`lanmda`表达式挂事件响应器
+
+```c#
+//简单快捷，且参数不需要再写类型
+timer.Elapsed += (sender,e)=>{
+  //处理逻辑
+}
+```
+
+#### 自定义事件
+
+1. 使用事件必须先声明委托类型
+
+```c#
+    //想要自定义事件，必须要有委托类型，可以声明下面的自定义委托
+    public delegate void OrderEventHandler(Customer c, OrderEventArgs e);
+
+    //也可以用c#提供的万能委托
+    public delegate void EventHandler(Object Sender, EventArgs e);
+
+```
+
+1.声明事件
+
+```c#
+//先声明委托字段
+private OrderEventHandler orderEventHandler
+//再声明事件
+public event OrderEventHandler Order{
+  add{
+    this.orderEventHandler +=value;
+  }
+  remove{
+    this.orderEventHandler -=value;
+  }
+}
+```
+
+1. 事件委托的参数一般有两个
+
+- 第一个是 Object 类型，就是事件的拥有者
+- 第二个是 EventArgs 类的派生类，就是事件参数
+
+### VS 的使用技巧
+
+1. F2 可以重命名所有同名内容
+1. 创建事件响应器时:`+=`后 Tab 两次会自动创建响应器方法
