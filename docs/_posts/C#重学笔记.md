@@ -296,7 +296,7 @@ timer.Elapsed += (sender,e)=>{
    }
    ```
 
-1. 泛型方法也可以配合委托使用
+1. 泛型方法也可以配合委托使用,
 
    ```csharp
    main(){
@@ -312,6 +312,20 @@ timer.Elapsed += (sender,e)=>{
    public void Print(string b){
      Console.WriteLine(b)
    }
+   ```
+
+1. 泛型委托`Func`和`Action`相当于下列委托内容的语法糖
+
+   ```csharp
+    main(){
+     Add<int> func1 = Add;
+     int c = func1(1,2);
+     Print<string> action1 = Print;
+     action1("print something");
+   };
+
+   delegate T Add<T>(T a,T b);
+   delegate void Print<T>(T a)
    ```
 
 1. 泛型方法配合 Lamda 表达式就可以变成类似 js 的箭头方法声明
@@ -331,6 +345,34 @@ timer.Elapsed += (sender,e)=>{
 1. 结构体长得跟类很像，但是本质却是个值类型
 2. 结构体也可以实现接口，但是不能有父类（即不能被继承）
 3. 不允许显式的无参构造器，但是可以有显式的有参构造器
+
+### Lambda 表达式
+
+Lambda 来自希腊单词
+Lambda 表达式的作用：
+
+1. 匿名方法的调用
+1. Inline 的方法 （简洁，方便）
+
+Lambda 表达式中比较经典的应用
+
+```csharp
+
+main(){
+  DoSomeCal<int>((int a,int b)=>{return a+b;},100,200);
+  //上面表达式会自动进行泛型委托的类型推断，所以可以写成下面
+  DoSomeCal((a,b)=>{return a+b;},100,200);
+}
+static void DoSomeCal<T>(Func<T,T,T> func,T a,T b){
+  T res = func(a,b);
+  Console.WriteLine(res);
+}
+```
+
+### LINQ
+
+LINQ：.NET Language Integrated Query.
+配合 EF 使用，增删改查十分无敌。
 
 ### VS 的使用技巧
 
