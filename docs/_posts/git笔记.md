@@ -35,3 +35,7 @@ git add readme.txt
 ```bash
 git commit -m "wrote a readme file"
 ```
+
+## LearnGitBranch 学习
+
+1. `git branch -f [BRANCH_NAME] 提交对象` 可以让 branch 自动在各个 commit 对象间移动

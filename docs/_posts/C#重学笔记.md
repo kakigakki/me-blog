@@ -374,8 +374,89 @@ static void DoSomeCal<T>(Func<T,T,T> func,T a,T b){
 LINQ：.NET Language Integrated Query.
 配合 EF 使用，增删改查十分无敌。
 
+### c#6 新语法
+
+1. 方法定义直接使用 lambda 表达式
+1. 支持`using static` 可以引入静态类，从而调用该类的属性方法
+1. Null 条件运算符 `?.` 或者`??`（只能为可空类型服务）
+1. 字符串内插，语法：`$"{xxx}"`
+1. 异常筛选器
+
+   ```csharp
+   try{
+
+   }catch() when(){ //当异常Try中的异常满足when中的条件时才catch
+
+   }
+   ```
+
+### c#7 新语法
+
+1. `out`可以直接声明成变量 如`main(int out name)`
+1. 进制用下划线声明
+1. 可以用命名实参，如：
+
+   ```csharp
+   main(name:"kaki",age:13)
+   ```
+
+1. 枚举可以作为泛型的约束
+1. 约束不能为空
+
+### c#8 新语法
+
+1. 默认接口方法，接口中可以定义方法体。。
+1. switch 可以用 lambda 表达式（很酷）
+1. 静态本地函数。有点像 Js 中方法定义方法
+1. 异步流`awati` 还是跟 js 有点像
+
+### c#9 新语法
+
+1. 记录：`record`关键字可以让类中的属性无法被修改
+
+   ```csharp
+
+   public record Person{
+     public string name{get;set;};
+   };
+
+   Person person = new Person("kaki");
+   //如果要想修改记录的话，需要用到with关键字来复制一个新的记录
+   var otherPerson = person with{};
+
+   ```
+
+1. 简化对象声明
+
+   ```csharp
+   Person person = new();
+   ```
+
+1. 静态修饰，Lambda 表达式也可以声明静态方法
+
+   ```csharp
+   Func<int> func = static ()=>1;
+   ```
+
+1. 模式匹配，可以用`is`关键字进行判断
+
+   ```csharp
+   if(a is (>=1 and <=3) or (>=10  and <=120)){
+     ...
+   }
+   if(a is not null){
+   ...
+   }
+   ```
+
+1. lambda 的参数弃元 `(_,_)=>1`
+
 ### VS 的使用技巧
 
 1. F2 可以重命名所有同名内容
 1. 创建事件响应器时:`+=`后 Tab 两次会自动创建响应器方法
 1. `ctor`快速创建构造器
+
+```
+
+```
