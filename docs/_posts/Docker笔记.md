@@ -82,7 +82,7 @@ docker 是一个 client-server 结构的系统，守护进程运行在主机上�
 
 #### 容器常用命令
 
-- `docker run [可选参数] image` 运行容器
+- `docker run [可选参数] image` 创建并运行容器
   - `--name="Name"`指定容器名字，用来区别同一镜像下不同容器的时候使用
   - `--name 容器名字` 给容器起名字
   - `-d` 后台方式运行（需要容器后台运行，必须需要前台有个容器正在运行，否则此容器会自动销毁）
@@ -100,8 +100,8 @@ docker 是一个 client-server 结构的系统，守护进程运行在主机上�
   - `Ctrl+P+Q` 容器不停止退出容器
 - `docker rm 容器id` 删除容器
   - `docker rm [-f] $(docker ps -aq)` 删除全部容器
-- `docker start 容器id`
-- `docker restart 容器id`
+- `docker start 容器id` 启动容器
+- `docker restart 容器id` 重启容器
 - `docker stop 容器id`
 - `docker kill 容器id` 强制停止
 
@@ -131,6 +131,7 @@ docker 是一个 client-server 结构的系统，守护进程运行在主机上�
 
 - `-d`表示后台运行
 - `-p 3344:80`表示用当前服务器的 3344 映射到 docker 中的 80
+- `-P` 随机指定端口
 - `--name nginx01`表示给当前容器取名字
 - `nginx` 则就是需要启动的镜像
 
@@ -168,3 +169,62 @@ docker 下载的镜像都是只读的.无法进行修改.在镜像跑起来后�
 ### 镜像提交
 
 `docker commit -m="提交的信息 -a="作者" 需要提交的容器id 容器名字` 提交容器成为一个新的副本
+
+### 容器数据卷
+
+#### 概要
+
+容器之间可以有一个数据共享的技术!docker 容器中产生的数据可以同步到本地.
+可以讲我们容器内的目录,挂载到 Linux 上面
+
+#### 目的
+
+容器的持久化与同步操作.
+容器间的数据共享
+
+#### 使用
+
+1. `-v 主机目录:容器内目录 镜像`
+
+   ```c
+   docker run -it -v 主机目录:容器内目录 镜像 /bin/bash
+   //-v为数据卷挂载,可以写多个-v,挂载多个
+   ```
+
+   然后这两个目录就能够双向绑定了.两个目录就会自动同步
+   如果容器与主机同步后,容器被删除后,主机上的内容也不会被删除
+
+1. `docker volume ls` 查看所有数据卷的内容
+
+#### 具名挂载和匿名挂载和指定路径挂载
+
+1. 不指定卷名(不建议使用)
+   `docker run -d -P -v /etc/nginx --name nginx01 nginx`
+
+1. 指定卷名(推荐)
+   `docker run -d -P -v juming:/etc/nginx --name nginx01 nginx`
+
+1. 指定路径挂载(一般用来找目录)
+   `docker run -d -P -v /home/nginx:/etc/nginx --name nginx01 nginx`
+
+1. 可以通过卷名找挂载目录
+   `docker volumn inspect 卷名`
+
+#### 读写权限
+
+可以在挂载路径时指定容器内的权限
+
+1. ro 表示这个路径只能通过宿主机来操作,容器内部 readOnly
+   `-v juming:/etc/nginx:ro`
+
+1. rw 表示容器内可写可操作
+   `-v juming:/etc/nginx:rw`
+
+#### 容器间数据同步
+
+1. 声明父容器,父容器的路径`/home/vol`挂载到宿主机上
+   `docker run -it --name textParent -v parentV:/home/vol centos`
+1. 声明子容器,继承父容器.此时如果/home/vol 的内容被更新,父容器,子容器,宿主机上的挂载路径都会被更新
+   `docker run -it --name textChild --volumns-from textParent centos`
+
+1. 数据卷容器的持续周期一直持续到没有容器使用为止.但是宿主机上的数据除非手动删除不然永不删除
