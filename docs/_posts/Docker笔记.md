@@ -228,3 +228,100 @@ docker 下载的镜像都是只读的.无法进行修改.在镜像跑起来后�
    `docker run -it --name textChild --volumns-from textParent centos`
 
 1. 数据卷容器的持续周期一直持续到没有容器使用为止.但是宿主机上的数据除非手动删除不然永不删除
+
+### DockerFile
+
+#### 基础知识
+
+1. 每个保留关键字(命令)都必须是大写字母
+1. 命令是从上到下执行的
+1. `#` 表示注释
+1. 每个指令都会创建提交一个新的镜像层,并提交
+1. dockerFile 是面向开发的,我们以后要发布项目,做镜像,就需要编写 dockerfile 文件,文件编写十分简单
+
+#### dockerFile 命令
+
+![20210310225757](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20210310225757.png)
+
+1. Docker hub 中百分之 99 的镜像都是`FROM sctrach`
+
+#### 通过 dockerFile 构建镜像
+
+当构建完 dockerfile 后,就可以执行下面命令
+
+```c
+docker build -f dockerFile名字 -t 生成的镜像名 .
+//最后的 .  表示当前目录
+```
+
+查看他人的镜像是如何构建的
+
+```c
+docker history 镜像名
+```
+
+#### CMD 命令和 ENTRYPOINT 命令的区别
+
+一个 dockerfile 中只能用一个 CMD 命令.如果有多个的话, 后面的命令会替换前面的命令.
+但是一个 dockerfile 中可以有多个 ENTRYPOINT,后面的 ENTRYPOINT 命令会追加到前面的上面
+比如:
+`ENTRYPOINT ls -a`
+`ENTRYPOINT -l`
+就会构成`ENTRYPOINT la -a -l`
+
+#### 安装 Tomcat 镜像
+
+1. 创建 Dockerfile 文件
+
+```docker
+FROM centos
+MAINTAINER kaki<578932490@qq.com>
+# 声明作业路径
+ENV MYPATH /usr/local
+WORKDIR $MYPATH
+
+COPY readme.txt $MYPATH/readme.txt
+ADD jdk1-8u.tar.gz #ADD操作会自动解压
+ADD tomcat-9.tar.gz
+
+# 基镜像上执行命令
+RUN yum -y install vim
+
+#配置java环境变量
+ENV JAVA_HOME  $MYPATH/jdk1.8.0
+ENV CLASSPATH $JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+#配置Tomcat环境变量
+ENV CATALINA_HOME  $MYPATH/tomcat-9.0
+ENV CATALINA_BASH  $MYPATH/tomcat-9.0
+#配置环境变量
+ENV PATH $PATH:$JAVA_HOME/bin:$CATALINA_HOME/lib:$CATALINA_HOME/bin
+
+# 暴露端口
+EXPOSE 8080
+
+# 命令
+CMD $MYPATH/tomcat-9.0/bin/startup.sh && tail -F $MYPATH/tomcat-9.0/bin/logs/catlina.out
+
+```
+
+1. 构建 dockerfile
+
+```docker
+# 因为执行的dockerfile 名字为Dockerfile所以不需要指定源文件
+docker bulid -t myTomcat
+```
+
+### 发布镜像
+
+利用`DockerHub`
+登陆自己的 dockerHub 的账号密码就能发布镜像了
+
+`docker login -u xxxx -p xxxx`登陆账号密码
+`docher push 镜像名` :如果提交镜像不成功,可以给镜像加`tag`后再发布
+
+### docker 流程
+
+上面所有笔记的 docker 的流程可以总结为下张图
+![20210313153720](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20210313153720.png)
+
+### docker 网络
