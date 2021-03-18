@@ -53,14 +53,14 @@ module.exports = {
             },
             plugins: [
                     [
-                        'vuepress-plugin-container',
+                        'container',
                         {
                             type: 'ctnr',
                             before: `<div class="blockquote">`,
                             after: '</div>',
                         },
                     ],
-                    ['vuepress-plugin-container', {
+                    ['container', {
                             type: 'click',
                             before: info => `<details class="blockquote">${info ? `<summary>${info}</summary>` : ''}\n`,
                             after: () => '</details>\n'

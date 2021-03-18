@@ -45,6 +45,7 @@ toc : true
 1. 题目描述如下：
 
 ::: ctnr
+
 创建一个函数，该函数满足下面条件：
 
 - 接受任意数量的参数，
@@ -56,7 +57,7 @@ toc : true
 :::
 
 代码：
-::: 点击展开
+::: click
 
 ```js
 function MagicFunction(...args) {
