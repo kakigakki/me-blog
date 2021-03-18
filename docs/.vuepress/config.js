@@ -37,6 +37,8 @@ module.exports = {
                         link: 'kakigakki@gmail.com',
                     },
                 ],
+                <<
+                << << < HEAD
                 smoothScroll: true,
                 footer: {
                     contact: [{
@@ -67,4 +69,25 @@ module.exports = {
 }],
 ]
 }
+=======
+            },
+            lastUpdated: 'Last Updated', // string | boolean
+        },
+        plugins: [
+                [
+                    'vuepress-plugin-container',
+                    {
+                        type: 'ctnr',
+                        before: `<div class="blockquote">`,
+                        after: '</div>',
+                    },
+                ],
+                ['vuepress-plugin-container', {
+                        type: 'click',
+                        before: info => `<details class="blockquote">${info ? `<summary>${info}</summary>` : ''}\n`,
+            after: () => '</details>\n'
+      }],
+  ],
+
+>>>>>>> 7afd27a7e3f87e827237258a126f417d0b419558
 }
