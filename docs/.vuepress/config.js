@@ -14,7 +14,7 @@ module.exports = {
                     link: '/writings/'
                 },
                 {
-                    text: '頑張',
+                    text: '頑張ってね',
                     link: '/coding/'
                 },
                 {
@@ -37,6 +37,39 @@ module.exports = {
                         link: 'kakigakki@gmail.com',
                     },
                 ],
+                <<
+                << << < HEAD
+                smoothScroll: true,
+                footer: {
+                    contact: [{
+                            type: 'github',
+                            link: 'https://github.com/kakigakki',
+                        },
+                        {
+                            type: 'mail',
+                            link: 'kakigakki@gmail.com',
+                        },
+                    ],
+                },
+                lastUpdated: 'Last Updated', // string | boolean
+            },
+            plugins: [
+                    [
+                        'container',
+                        {
+                            type: 'ctnr',
+                            before: `<div class="blockquote">`,
+                            after: '</div>',
+                        },
+                    ],
+                    ['container', {
+                            type: 'click',
+                            before: info => `<details class="blockquote">${info ? `<summary>${info}</summary>` : ''}\n`,
+                            after: () => '</details>\n'
+}],
+]
+}
+=======
             },
             lastUpdated: 'Last Updated', // string | boolean
         },
@@ -56,4 +89,5 @@ module.exports = {
       }],
   ],
 
+>>>>>>> 7afd27a7e3f87e827237258a126f417d0b419558
 }
