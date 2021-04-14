@@ -15,6 +15,16 @@ toc: true
 1. 不需要借助`apache,nginx`等服务器,自带 http 服务器
 1. 应用范围:![20210318213106](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20210318213106.png)
 
+### Node 为什么用得人很少
+
+1. 人员角度:采用 Javascript,适合前端开发者使用
+1. 技术角度:Nodejs 平台的特点是非阻塞 IO,单线程轮询,线程接到多个请求如果其中有的请求很慢,也不会等待.
+
+### Node 适合的业务
+
+1. 开发前端各种工具
+1. 作为前端的中间层
+
 ### 内置模块
 
 nodejs 中的方法大部分都是异步的
@@ -409,13 +419,13 @@ app.use(async (ctx, next) => {
 1. postbody 解析中间件`koa-bodyparser` : 解析 post 参数
 1. ejs 模板解析中间件`koa-views` : 可以使用 ejs 进行服务器端渲染
 1. 静态资源中间件`koa-static` : 可以让项目处理静态资源
-
    ```js
    //npm install --save koa-static
    const static = require('koa-static')
    //如果页面中有请求静态资源的话,就会经过此中间件,并且自动next()
    app.use(static(__dirname + ' /static'))
    ```
+1. 解决跨域`koa-cors`
 
 #### 所有路由共享数据
 
@@ -593,3 +603,36 @@ console.log(new Buffer('aGVsbG8sIHdvcmxkIQ==', 'base64').toString()) // 还原ba
    //获取值
    ctx.session.username
    ```
+
+### mongoDB
+
+```js
+//1. npm install mongodb --save
+
+// 2.引入mongodb下面的MongoClient
+var MongoClient = require('mongodb').MongoClient
+
+// 3.定义数据库连接的地址 以及配置数据库
+koa数据库的名称
+
+var url = 'mongodb://localhost:27017/'
+
+var dbName = 'koa'
+
+//4.nodejs连接数据库
+
+MongoClient.connect(url, function(err, client) {
+  const db = client.db(dbName)
+  数据库db对象
+})
+
+//5.操作数据库
+db.user.insert
+MongoClient.connect(url, function(err, db) {
+  db.collection('user').insertOne({ name: '张三' }, function(err, result) {
+    db.close() //关闭连接
+  })
+})
+```
+
+### koa 项目

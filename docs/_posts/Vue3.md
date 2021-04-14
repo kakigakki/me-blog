@@ -253,3 +253,48 @@ async setup(){
   }
 }
 ```
+
+## Vite
+
+### 亮点
+
+1. 地址解析
+   不管是`script`中还是`style`中还是`html`中的地址在 vite 中都会用同样的方法解析,所以这些位置都可以使用别名
+
+1. css 可以通过模块引入
+
+```html
+
+<p class="classes.logo"><p>
+
+<script>
+import classes from './App.module.css'
+<script>
+
+```
+
+1. vue3 中的 setup script
+
+   - 可以在`vue`文件中的`script`标签直接加上`setup`属性,来直接将整个`ts`部分包含在 setup 启动函数中
+   - 导入组件后可以直接使用
+
+   - `difneProps({})`可以直接定义属性
+     ![20210326001202](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20210326001202.png)
+   - `defineEmit` 可以定义事件
+     ![20210326001141](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20210326001141.png)
+
+   - `useContext` 定义上下文
+     ![20210326001441](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20210326001441.png)
+
+### 插件
+
+当用户请求时,都会经过一下插件.这就有点像有点像过滤器,也有点像中间件.
+
+1. 插件的形式
+
+![20210325234253](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20210325234253.png)
+
+1. 插件的钩子
+   ![20210325233644](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20210325233644.png)
+
+###
