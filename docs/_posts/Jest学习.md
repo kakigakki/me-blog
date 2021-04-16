@@ -1,5 +1,5 @@
 ---
-title: javascript速记
+title: Jest学习
 date: 2021-04-14
 author: kaki
 location: Tokyo
@@ -135,3 +135,79 @@ toc: true
 1. `toContail(xx)` 匹配某数组中是否有 xx **常用!**
 1. `toThrow()` : 如果匹配到异常则能通过,参数可以为空也可以为`Error`原型对象,也可以是字符串或者正则
    ![20210414235516](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20210414235516.png)
+
+### 钩子函数
+
+1. `beforeAll()` 在所有测试用例之前执行
+1. `afterAll()` 在所有测试用例之后执行
+1. `beforeEach()` 在每个测试用例之前执行
+1. `afterEach()` 在每个测试用例之后执行
+
+### Mock 函数
+
+1. 可以用来测试函数的参数与返回值
+
+   ```js
+   const mockCallback = jest.fn(x => 42 + x)
+   forEach([0, 1], mockCallback)
+
+   // The mock function is called twice
+   expect(mockCallback.mock.calls.length).toBe(2)
+
+   // The first argument of the first call to the function was 0
+   expect(mockCallback.mock.calls[0][0]).toBe(0)
+
+   // The first argument of the second call to the function was 1
+   expect(mockCallback.mock.calls[1][0]).toBe(1)
+
+   // The return value of the first call to the function was 42
+   expect(mockCallback.mock.results[0].value).toBe(42)
+   ```
+
+1. 还可以给自定义测试返回值
+
+   ```js
+   const myMock = jest.fn()
+   console.log(myMock())
+   // > undefined
+
+   myMock
+     .mockReturnValueOnce(10)
+     .mockReturnValueOnce('x')
+     .mockReturnValue(true)
+
+   console.log(myMock(), myMock(), myMock(), myMock())
+   // > 10, 'x', true, true
+   ```
+
+### Mock 模块
+
+```js
+// users.js
+import axios from 'axios'
+
+class Users {
+  static all() {
+    return axios.get('/users.json').then(resp => resp.data)
+  }
+}
+
+export default Users
+
+// users.test.js
+import axios from 'axios'
+import Users from './users'
+
+jest.mock('axios')
+
+test('should fetch users', () => {
+  const users = [{ name: 'Bob' }]
+  const resp = { data: users }
+  axios.get.mockResolvedValue(resp)
+
+  // or you could use the following depending on your use case:
+  // axios.get.mockImplementation(() => Promise.resolve(resp))
+
+  return Users.all().then(data => expect(data).toEqual(users))
+})
+```
