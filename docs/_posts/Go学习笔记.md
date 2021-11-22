@@ -70,31 +70,33 @@ var (
 name:="aaa" //相当于var name = "aaa"
 ```
 
-### 
+## 基础包
 
-### 属性
+### fmt占位符
 
-c++和 java 中只有字段，没有属性这个东西。对字段进行封装一般用 set,get 方法。但是 csharp 中有属性。相当于 set,get 的语法糖。永远使用属性而不是字段来暴露内容。即字段最好永远是`protected`或者`private`
+```go
+var n=100
+fmt.Printf("%T",n) //查看类型
+fmt.Printf("%v",n)//查看变量值
+fmt.Printf("%b",n)//查看二进制
+fmt.Printf("%d",n)//查看十进制
+fmt.Printf("%o",n)//查看八进制
+fmt.Printf("%x",n)//查看16进制
 
-- 可以使用`propfull`快速创建上面的属性的完整声明模板
+var s = "hello"
+fmt.Printf("%s",n)//查看字符串
+```
 
-  ```csharp
-  private int age; //字段用驼峰
-  public int Age{ //属性用首字母大写
-  get{
-    return this.age;
-  }
+### 字符串的常用操作
 
-  set{
-    ...
-  }
-  }
-  ```
+```go
+var name = "ka"+"ki" //拼接用+或者fmt.Sprintf(“%s%s”)
 
-- 使用`prop`快速属性的简略声明模板
-
-  ```csharp
-  public int Age{get;set;}
-  ```
-
-### 索引器
+var arr = string.Split(name,"a") //分割 -> [k,ki]
+string.Contains(name,"k")//true
+string.HasPrefix(name,"ka") //true
+string.HasSuffix(name,"ki") //true
+string.Index(name,"i")//3
+string.LastIndex(name,"i")//0\
+string.Join(arr,"") //kaki
+```
