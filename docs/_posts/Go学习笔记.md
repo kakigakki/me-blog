@@ -100,3 +100,82 @@ string.Index(name,"i")//3
 string.LastIndex(name,"i")//0\
 string.Join(arr,"") //kaki
 ```
+
+### if语句
+
+if条件判断还有一种特殊的写法，可以在 if 表达式之前添加一个执行语句，再根据变量值进行判断，举个例子：
+
+```go
+func ifDemo2() {
+	if score := 65; score >= 90 {
+		fmt.Println("A")
+	} else if score > 75 {
+		fmt.Println("B")
+	} else {
+		fmt.Println("C")
+	}
+}//此时的score仅存在于第一个if语句的作用域中
+```
+
+### for语句
+
+go语句的for语句有三个语句，且三个语句都可以省略
+
+```go
+for i:=0;i<10;i++{
+
+}//正常语句
+
+for i<10{
+  
+}//省略前后语句，保留中间语句，类似于其他语言的while
+for{
+
+}//三个语句全部省略，死循环 
+```
+
+Go语言中可以使用for range遍历`数组`、`切片`、`字符串`、`map` 及`通道（channel）`。 通过for range遍历的返回值有以下规律：
+
+- 数组、切片、字符串返回索引和值。
+- map返回键和值。
+- 通道（channel）只返回通道内的值。
+```go
+	var s2 = "hello王子"
+	for i, v := range s2 {
+		fmt.Printf("%d  %c\n", i, v)
+	}
+          /*
+          输出：
+          0  h
+          1  e
+          2  l
+          3  l
+          4  o
+          5  王
+          8  子
+          */
+```
+
+### switch
+
+switch用法跟其他语言没有区别。
+但是存在`fallthrough`语法，可以执行满足条件的case的下一个case，是为了兼容C语言中的case设计的。
+```go
+func switchDemo5() {
+	s := "a"
+	switch {
+	case s == "a":
+		fmt.Println("a")
+		fallthrough
+	case s == "b":
+		fmt.Println("b")
+	default:
+		fmt.Println("...")
+	}
+}
+/* 
+输出
+a
+b
+*/
+```
