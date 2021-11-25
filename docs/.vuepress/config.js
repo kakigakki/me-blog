@@ -10,10 +10,6 @@ module.exports = {
             nav: [
                 { text: '编程', link: '/' },
                 {
-                    text: '随笔',
-                    link: '/writings/'
-                },
-                {
                     text: '頑張ってね',
                     link: '/coding/'
                 },
