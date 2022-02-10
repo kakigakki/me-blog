@@ -44,7 +44,7 @@ class SpringbootDemoApplicationTests {
 
 ![20220208171049](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220208171049.png)
 
-## 整合Mybaits-Plus
+### 整合Mybaits-Plus
 
 ![20220208172006](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220208172006.png)
 
@@ -202,3 +202,59 @@ logback:
     max-file-size: 4KB
     file-name-pattern:  server.%d{yyyy-MM-dd}.%i.log
 ```
+
+## 热部署
+
+### 启动热部署
+
+使用springboot时，需要devtools坐标
+![20220210134821](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220210134821.png)
+
+### 自动启动热部署
+
+![20220210135057](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220210135057.png)
+
+`CTRL+SHIFT+ALT+/`打开
+![20220210135113](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220210135113.png)
+
+IDEA会在失去焦点5秒后热部署。
+
+### 自定义热部署排除项
+
+```yaml
+devtools:
+  restart:
+    #设置不参与热部署的文件或者文件夹
+    exclude: static/**,public/**
+
+```
+
+## 配置高级
+
+### @ConfigurationProperties注解
+
+使用@ConfigurationProperties为第三方Bean绑定属性
+
+![20220210140616](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220210140616.png)
+
+使用@@EnableConfigurationProperties可以将对应的类加入Spring容器并且设置值
+![20220210140827](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220210140827.png)
+
+### 常用计量单位
+
+springboot支持JDK8提供的计量单位
+![
+](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/%0D%0A.png)
+
+![20220211003506](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220211003506.png)
+
+### bean属性校验
+
+1. bean校验需要添加JSR303规范和Hibernate校验框架的坐标，springboot中有整合版本，所以不需要指定版本。
+![20220211004038](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220211004038.png)
+
+1. 对Bean开启校验功能
+![20220211004146](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220211004146.png)
+
+1. 设置校验规则
+![20220211004220](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220211004220.png)
