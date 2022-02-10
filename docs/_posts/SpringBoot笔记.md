@@ -10,6 +10,43 @@ toc: true
 
 # SpringBoot
 
+## 整合第三方技术
+
+### 整合Junit
+
+springboot初始化时一般会加载整合了Junit的starter，可以直接进行测试
+
+```java
+
+@SpringBootTest
+class SpringbootDemoApplicationTests {
+
+    //1. 注入要测试的Bean对象
+    @Autowired
+    private BooksService booksService;
+
+    @Test
+    void contextLoads() {
+        //2.执行测试的Bean对象的方法
+        booksService.save();
+    }
+
+}
+```
+
+### 整合Mybaits
+
+只需要选择对应的starter然后配置数据库连接信息就可以了。
+
+![20220208170907](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220208170907.png)
+
+![20220208170936](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220208170936.png)
+
+![20220208171049](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220208171049.png)
+
+## 整合Mybaits-Plus
+
+![20220208172006](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220208172006.png)
 
 ## 运维
 
@@ -35,6 +72,47 @@ java -jar springboot-demo.jar --server.port=8080
 ![20220209235233](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220209235233.png)
 
 ### 配置文件
+
+`springboot`支持三种后缀的配置文件`properties`,`yml`,`yaml`。优先级分别为`properties`>`yml`>`yaml`
+
+#### yaml使用
+
+可以使用${属性名}引用数据
+
+```yml
+
+baseDir: c:\win10
+
+tempDir: ${baseDir}\temp
+```
+
+可以使用引号包裹字符串，其中的转义字符可以生效
+
+```yml
+
+baseDir: c:\win10
+
+tempDir: "${baseDir}\temp" #会输出c:\win10 emp
+```
+#### 配置文件使用
+springboot中获取基础变量使用"@Value"
+
+```java
+
+@Value("${baseDir}")
+private string baseDir
+```
+
+springboot中获取全部配置变量使用"@Autowired"
+
+```java
+
+@Autowired
+private Environment env
+```
+
+可以自定义对象封装指定的配置变量
+![20220208164021](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220208164021.png)
 
 
 #### 配置文件分级
