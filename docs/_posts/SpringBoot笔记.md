@@ -258,3 +258,64 @@ springboot支持JDK8提供的计量单位
 
 1. 设置校验规则
 ![20220211004220](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220211004220.png)
+
+## 测试
+
+### 加载测试专用属性
+
+使用环境临时属性
+![20220213151629](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220213151629.png)
+
+使用配置类
+
+创建一个配置类，并且创建一个string类型的bean
+![20220215102624](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220215102624.png)
+
+导入配置类，并且自动装配string
+![20220213151958](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220213151958.png)
+
+### 测试类中启动Web环境
+
+在测试类中配置模拟web端口
+![20220215103024](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220215103024.png)
+
+创建虚拟请求，执行请求进行测试
+![20220215103250](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220215103250.png)
+
+请求状态断言
+![20220215103610](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220215103610.png)
+
+响应内容断言
+
+![20220215104043](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220215104043.png)
+
+### 业务层测试事务回滚
+
+![20220215104907](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220215104907.png)
+
+### 测试数据随机值设定
+
+可以使用springboot提供的随机数为其赋值
+在application.yaml中添加属性，
+![20220215105431](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220215105431.png)
+
+并且自定义一个Bean,
+![20220215105537](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220215105537.png)
+
+然后自动装配到测试类即可。
+![20220215105620](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220215105620.png)
+　
+## 数据库整合
+
+### Springboot默认提供的数据层解决方案
+
+#### 数据源
+![20220215164641](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220215164641.png)
+
+
+#### 持久化框架
+
+![20220215165203](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220215165203.png)
+
+#### 
+
