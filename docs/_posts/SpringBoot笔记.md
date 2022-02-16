@@ -317,5 +317,18 @@ springboot支持JDK8提供的计量单位
 
 ![20220215165203](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220215165203.png)
 
-#### 
+#### 数据库
 
+![20220216150732](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220216150732.png)
+
+## NoSql数据库整合
+
+#### 整合Redis
+
+![20220216152339](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220216152339.png)
+
+![20220216152328](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220216152328.png)
+
+![20220216152355](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220216152355.png)
+
+![20220216152409](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220216152409.png)
