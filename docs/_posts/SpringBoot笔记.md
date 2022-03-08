@@ -332,3 +332,12 @@ springboot支持JDK8提供的计量单位
 ![20220216152355](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220216152355.png)
 
 ![20220216152409](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220216152409.png)
+
+#### 整合mongodb
+
+![20220216231325](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220216231325.png)
+
+![20220216231340](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220216231340.png)
+
+![20220216231351](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20220216231351.png)
+
