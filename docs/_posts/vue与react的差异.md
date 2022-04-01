@@ -27,3 +27,23 @@ toc: true
 - react中还是利用属性的思想完成。只需要在子组件中用`this.props.children`就可以拿到html片段
 
 
+## 生命周期
+
+如果不使用函数式组件的话，其实React的生命周期和Vue的写法是很像的，都是`mounted``updated`这一套东西，但是如果React使用了函数式编程的话，两者差别就有点大了。
+- vue不管是vue2还是vue3其实都是调用生命周期函数。比如：
+  - vue2中用`mounted(){}`
+  - vue3中用`onMounted(()=>{})`
+- React的函数式编程中直接使用`useEffect`来模拟了整个生命周期，十分牛逼。
+
+```ts
+//第一个参数为回调函数,当组件初始化或者监听对象发生改变时调用 （mounted,updated）
+//回调函数的返回值也是一个函数，用来表示组件销毁时的回调函数。(destroyed)
+//第二个参数为监听对象,可以是state或者prop
+useEffect(()=>{
+
+    return ()=>{
+
+    }
+},[])
+
+```
