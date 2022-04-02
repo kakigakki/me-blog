@@ -42,3 +42,16 @@ useEffect(()=>{
 },[])
 
 ```
+
+## css模块化
+
+- vue中应该使用模板,每个模板里都有带着scoped的css标签,不太需要管理css的重复,覆盖问题
+- react中需要使用`xxx.module.css`的命名方式对css文件进行命名,将css模块化,然后使用css in js的方式去引用
+```js
+import cssClass from "./test.module.css"
+
+<div class={cssClass.active}>
+ test
+</div>
+
+```
