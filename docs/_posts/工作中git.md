@@ -22,3 +22,5 @@ toc: true
 - `git checkout -b xxxx` 创建并切换到目标分支
 - `git branch -D xxxx` 强制删除分支
 - `git reset --hard 远程分支` 强制将本地分支变成远程分支
+- `git remote add upstream xxxxx` 将自己仓库的上流设为xxxx
+- `git pull upstream <branch>` 拉取上流的代码
