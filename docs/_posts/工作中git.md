@@ -22,3 +22,6 @@ toc: true
 - `git checkout -b xxxx` 创建并切换到目标分支
 - `git branch -D xxxx` 强制删除分支
 - `git reset --hard 远程分支` 强制将本地分支变成远程分支
+- `git remote remove origin` 删除本地与远程仓库的连接
+- `git remote add origin <URL>` 建立本地与远程仓库的连接（origin只是通俗名字）
+- `git remote add upstream <URL>` 建立与fork仓库的连接（upstream只是通俗名字）
