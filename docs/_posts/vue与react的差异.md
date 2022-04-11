@@ -60,3 +60,12 @@ import cssClass from "./test.module.css"
 </div>
 
 ```
+
+## 响应式数据的修改
+
+- vue3中直接使用proxy对由`ref()`,`reactive()`包装过的数据进行深层次的绑定。
+- react中如果不适用第三方库的话，每次想要修改`state`都需要深拷贝出一份新的对象，然后再修改这个新对象，再把这个新对象赋给`state`，如此操作特别麻烦
+- react中可以使用`immutable`第三方库来修改state，`immutable`优点：
+  - 每次修改immutable对象都出创建新对象，所以可以直接修改被immutable包装过的state，可以减少代码量
+  - 因为如果只是单纯的深拷贝创建新对象赋值给state，性能损耗很大，所以immutable在性能上也做了优化
+  - 
