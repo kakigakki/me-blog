@@ -9,33 +9,6 @@ tags:
 toc: true
 ---
 
-## Path Finder #1: can you reach the exit?
-
-[Link](https://www.codewars.com/kata/5765870e190b1472ec0022a2)
-
-```js
-function pathFinder(maze){
-  const mazeArr = maze.split('\n').map(str=>str.split(""))
-  const n = mazeArr.length
-  const m = mazeArr[0].length
-  const dire = [[0,1],[0,-1],[1,0],[-1,0]]
-  const queue = [[0, 0]]
-  while (queue.length) {
-      const [x, y] = queue.shift()
-      if (x >= n || x < 0 || y >= m || y < 0 || mazeArr[x][y] === "W") continue
-      if(x===n-1 && y===m-1){
-        return true
-      }
-      mazeArr[x][y] = "W";
-      dire.forEach(move => {
-          const newX = move[0] + x
-          const newY = move[1] + y
-          queue.push([newX, newY])
-      })
-  }
-  return false
-}
-```
 
 ## Adding Big Numbers
 [Link](https://www.codewars.com/kata/525f4206b73515bffb000b21)
@@ -461,5 +434,33 @@ snail = function(array) {
     }
   }
   return result
+}
+```
+
+## Path Finder #1: can you reach the exit?
+
+[Link](https://www.codewars.com/kata/5765870e190b1472ec0022a2)
+
+```js
+function pathFinder(maze){
+  const mazeArr = maze.split('\n').map(str=>str.split(""))
+  const n = mazeArr.length
+  const m = mazeArr[0].length
+  const dire = [[0,1],[0,-1],[1,0],[-1,0]]
+  const queue = [[0, 0]]
+  while (queue.length) {
+      const [x, y] = queue.shift()
+      if (x >= n || x < 0 || y >= m || y < 0 || mazeArr[x][y] === "W") continue
+      if(x===n-1 && y===m-1){
+        return true
+      }
+      mazeArr[x][y] = "W";
+      dire.forEach(move => {
+          const newX = move[0] + x
+          const newY = move[1] + y
+          queue.push([newX, newY])
+      })
+  }
+  return false
 }
 ```
