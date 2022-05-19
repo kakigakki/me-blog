@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Go学习笔记 | KAKi BLOG</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="
+2007年发明的21世纪的新语言
+开发效率高
+语法简洁
+执行性能好
+天生支持并发
+支持跨平台编译
+开发环境搭建
+安装Go
+下载：https://golang.org/dl/
+确认下载完成：任意命令行敲go version
+配置GOPATH(表明你写的go项目存放路径)
+     添加任意一个目录到系统环境变量，并且 ...">
+    <link rel="preload" href="/me-blog/assets/css/0.styles.160a852d.css" as="style"><link rel="preload" href="/me-blog/assets/js/app.4b1a192a.js" as="script"><link rel="preload" href="/me-blog/assets/js/6.28c07464.js" as="script"><link rel="preload" href="/me-blog/assets/js/3.db7e6e2f.js" as="script"><link rel="preload" href="/me-blog/assets/js/14.5beb0ec8.js" as="script"><link rel="prefetch" href="/me-blog/assets/js/10.79eede31.js"><link rel="prefetch" href="/me-blog/assets/js/11.55973fd1.js"><link rel="prefetch" href="/me-blog/assets/js/12.9578c04b.js"><link rel="prefetch" href="/me-blog/assets/js/13.dcb99cce.js"><link rel="prefetch" href="/me-blog/assets/js/15.f58825d9.js"><link rel="prefetch" href="/me-blog/assets/js/16.3ee014d3.js"><link rel="prefetch" href="/me-blog/assets/js/17.88b8ce45.js"><link rel="prefetch" href="/me-blog/assets/js/18.78fcb414.js"><link rel="prefetch" href="/me-blog/assets/js/19.56424686.js"><link rel="prefetch" href="/me-blog/assets/js/20.d8b5c6da.js"><link rel="prefetch" href="/me-blog/assets/js/21.5ae38ab1.js"><link rel="prefetch" href="/me-blog/assets/js/22.6f9be2d0.js"><link rel="prefetch" href="/me-blog/assets/js/23.1040e7cc.js"><link rel="prefetch" href="/me-blog/assets/js/24.4930b6be.js"><link rel="prefetch" href="/me-blog/assets/js/25.b2addafc.js"><link rel="prefetch" href="/me-blog/assets/js/26.4c8fdf59.js"><link rel="prefetch" href="/me-blog/assets/js/27.d70545a0.js"><link rel="prefetch" href="/me-blog/assets/js/28.47ac6ea1.js"><link rel="prefetch" href="/me-blog/assets/js/29.d1a8312e.js"><link rel="prefetch" href="/me-blog/assets/js/30.abf11326.js"><link rel="prefetch" href="/me-blog/assets/js/31.66095ccb.js"><link rel="prefetch" href="/me-blog/assets/js/32.48bd6ca5.js"><link rel="prefetch" href="/me-blog/assets/js/33.a394a180.js"><link rel="prefetch" href="/me-blog/assets/js/34.9142e80a.js"><link rel="prefetch" href="/me-blog/assets/js/35.eddeb958.js"><link rel="prefetch" href="/me-blog/assets/js/36.dc234639.js"><link rel="prefetch" href="/me-blog/assets/js/37.d2e7e290.js"><link rel="prefetch" href="/me-blog/assets/js/38.b7b6900f.js"><link rel="prefetch" href="/me-blog/assets/js/39.3ddc72c6.js"><link rel="prefetch" href="/me-blog/assets/js/4.9ce64a3d.js"><link rel="prefetch" href="/me-blog/assets/js/40.04d82849.js"><link rel="prefetch" href="/me-blog/assets/js/41.4bb08b11.js"><link rel="prefetch" href="/me-blog/assets/js/42.91f194df.js"><link rel="prefetch" href="/me-blog/assets/js/43.04bbe10d.js"><link rel="prefetch" href="/me-blog/assets/js/44.c1594f17.js"><link rel="prefetch" href="/me-blog/assets/js/45.5cfd9196.js"><link rel="prefetch" href="/me-blog/assets/js/5.61e04663.js"><link rel="prefetch" href="/me-blog/assets/js/7.7f74546b.js"><link rel="prefetch" href="/me-blog/assets/js/8.a9b0d16e.js"><link rel="prefetch" href="/me-blog/assets/js/9.33795499.js"><link rel="prefetch" href="/me-blog/assets/js/vuejs-paginate.3eb1ed69.js">
+    <link rel="stylesheet" href="/me-blog/assets/css/0.styles.160a852d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/me-blog/" class="nav-link home-link">KAKi BLOG </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/me-blog/" class="nav-link">编程</a></li><li class="nav-item"><a href="/me-blog/coding/" class="nav-link">頑張ってね</a></li><li class="nav-item"><a href="/me-blog/tag/" class="nav-link">标签</a></li><li class="nav-item"><a href="https://github.com/kakigakki" target="_blank" rel="noopener noreferrer" class="nav-link external">github</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header> <div class="colorPicker themeColorPicker" data-v-7280d5ff><button data-v-7280d5ff></button> <button data-v-7280d5ff></button> <button data-v-7280d5ff></button> <button data-v-7280d5ff></button> <button data-v-7280d5ff></button></div></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/me-blog/" class="nav-link mobile-home-link">KAKi BLOG </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/me-blog/" class="nav-link">编程</a></li><li class="mobile-nav-item"><a href="/me-blog/coding/" class="nav-link">頑張ってね</a></li><li class="mobile-nav-item"><a href="/me-blog/tag/" class="nav-link">标签</a></li><li class="mobile-nav-item"><a href="https://github.com/kakigakki" target="_blank" rel="noopener noreferrer" class="nav-link external">github</a></li> <li class="mobile-nav-item"><!----></li></ul></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        Go学习笔记
+      </h1> <div class="post-meta"><div itemprop="publisher author" itemtype="http://schema.org/Person" itemscope="itemscope" class="post-meta-author"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg> <span itemprop="name">kaki</span> <span itemprop="address">   in Tokyo</span></div> <div class="post-meta-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2021-11-14T00:00:00.000Z">
+      Sun Nov 14 2021
+    </time></div> <ul itemprop="keywords" class="post-meta-tags"><li class="post-tag" data-v-f41abf76><a href="/me-blog/tag/Go" data-v-f41abf76><span data-v-f41abf76>Go</span></a></li></ul></div></header> <div itemprop="articleBody" class="content__default"><h1 id="特点"><a href="#特点" class="header-anchor">#</a> 特点</h1> <p>2007年发明的21世纪的新语言
+开发效率高<br>
+语法简洁<br>
+执行性能好
+天生支持并发
+支持跨平台编译</p> <h1 id="开发环境搭建"><a href="#开发环境搭建" class="header-anchor">#</a> 开发环境搭建</h1> <h2 id="安装go"><a href="#安装go" class="header-anchor">#</a> 安装Go</h2> <ol><li>下载：https://golang.org/dl/</li> <li>确认下载完成：任意命令行敲<code>go version</code></li> <li>配置GOPATH(表明你写的go项目存放路径)
+<ul><li>添加任意一个目录到系统环境变量，并且命名为<code>GOPATH</code> <img src="https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20211114003714.png" alt="20211114003714"></li> <li>在GOPATH下新建三个文件夹，并将bin文件夹添加到path环境变量中
+<img src="https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20211114004016.png" alt="20211114004016"></li> <li>打开cmd敲<code>go env</code>确认GOPATH已经修改完毕</li></ul></li></ol> <h1 id="基础"><a href="#基础" class="header-anchor">#</a> 基础</h1> <h2 id="go语言文件的基本结构"><a href="#go语言文件的基本结构" class="header-anchor">#</a> Go语言文件的基本结构</h2> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main  <span class="token comment">//表明这是一个可执行文件</span>
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span> <span class="token comment">//导包</span>
+
+<span class="token comment">//函数外只能声明标识符（变量/常量/函数）</span>
+<span class="token comment">//函数外的语句都必须以关键字开始( var const func)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="变量"><a href="#变量" class="header-anchor">#</a> 变量</h2> <h3 id="声明变量"><a href="#声明变量" class="header-anchor">#</a> 声明变量</h3> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">var</span> name <span class="token builtin">string</span> <span class="token operator">=</span> <span class="token string">&quot;s&quot;</span>
+<span class="token keyword">var</span> age <span class="token builtin">int</span>
+<span class="token keyword">var</span> isOk <span class="token builtin">bool</span>
+</code></pre></div><h3 id="批量声明"><a href="#批量声明" class="header-anchor">#</a> 批量声明</h3> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">var</span> <span class="token punctuation">(</span>
+  name <span class="token builtin">string</span>
+  age <span class="token builtin">int</span>
+  isOk <span class="token builtin">bool</span>
+<span class="token punctuation">)</span>
+</code></pre></div><h3 id="简短变量声明"><a href="#简短变量声明" class="header-anchor">#</a> 简短变量声明</h3> <p>简短声明只能在函数体中使用</p> <div class="language-go extra-class"><pre class="language-go"><code>name<span class="token operator">:=</span><span class="token string">&quot;aaa&quot;</span> <span class="token comment">//相当于var name = &quot;aaa&quot;</span>
+</code></pre></div><h2 id="基础包"><a href="#基础包" class="header-anchor">#</a> 基础包</h2> <h3 id="fmt占位符"><a href="#fmt占位符" class="header-anchor">#</a> fmt占位符</h3> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">var</span> n<span class="token operator">=</span><span class="token number">100</span>
+fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%T&quot;</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span> <span class="token comment">//查看类型</span>
+fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%v&quot;</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token comment">//查看变量值</span>
+fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%b&quot;</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token comment">//查看二进制</span>
+fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d&quot;</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token comment">//查看十进制</span>
+fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%o&quot;</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token comment">//查看八进制</span>
+fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%x&quot;</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token comment">//查看16进制</span>
+
+<span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token string">&quot;hello&quot;</span>
+fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%s&quot;</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token comment">//查看字符串</span>
+</code></pre></div><h3 id="字符串的常用操作"><a href="#字符串的常用操作" class="header-anchor">#</a> 字符串的常用操作</h3> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">&quot;ka&quot;</span><span class="token operator">+</span><span class="token string">&quot;ki&quot;</span> <span class="token comment">//拼接用+或者fmt.Sprintf(“%s%s”)</span>
+
+<span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token builtin">string</span><span class="token punctuation">.</span><span class="token function">Split</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">)</span> <span class="token comment">//分割 -&gt; [k,ki]</span>
+<span class="token builtin">string</span><span class="token punctuation">.</span><span class="token function">Contains</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span><span class="token string">&quot;k&quot;</span><span class="token punctuation">)</span><span class="token comment">//true</span>
+<span class="token builtin">string</span><span class="token punctuation">.</span><span class="token function">HasPrefix</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span><span class="token string">&quot;ka&quot;</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+<span class="token builtin">string</span><span class="token punctuation">.</span><span class="token function">HasSuffix</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span><span class="token string">&quot;ki&quot;</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+<span class="token builtin">string</span><span class="token punctuation">.</span><span class="token function">Index</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span><span class="token string">&quot;i&quot;</span><span class="token punctuation">)</span><span class="token comment">//3</span>
+<span class="token builtin">string</span><span class="token punctuation">.</span><span class="token function">LastIndex</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span><span class="token string">&quot;i&quot;</span><span class="token punctuation">)</span><span class="token comment">//0\</span>
+<span class="token builtin">string</span><span class="token punctuation">.</span><span class="token function">Join</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span> <span class="token comment">//kaki</span>
+</code></pre></div><h3 id="if语句"><a href="#if语句" class="header-anchor">#</a> if语句</h3> <p>if条件判断还有一种特殊的写法，可以在 if 表达式之前添加一个执行语句，再根据变量值进行判断，举个例子：</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">ifDemo2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> score <span class="token operator">:=</span> <span class="token number">65</span><span class="token punctuation">;</span> score <span class="token operator">&gt;=</span> <span class="token number">90</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;A&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> score <span class="token operator">&gt;</span> <span class="token number">75</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;B&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;C&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token comment">//此时的score仅存在于第一个if语句的作用域中</span>
+</code></pre></div><h3 id="for语句"><a href="#for语句" class="header-anchor">#</a> for语句</h3> <p>go语句的for语句有三个语句，且三个语句都可以省略</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">for</span> i<span class="token operator">:=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span><span class="token comment">//正常语句</span>
+
+<span class="token keyword">for</span> i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">{</span>
+  
+<span class="token punctuation">}</span><span class="token comment">//省略前后语句，保留中间语句，类似于其他语言的while</span>
+<span class="token keyword">for</span><span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span><span class="token comment">//三个语句全部省略，死循环 </span>
+</code></pre></div><p>Go语言中可以使用for range遍历<code>数组</code>、<code>切片</code>、<code>字符串</code>、<code>map</code> 及<code>通道（channel）</code>。 通过for range遍历的返回值有以下规律：</p> <ul><li>数组、切片、字符串返回索引和值。</li> <li>map返回键和值。</li> <li>通道（channel）只返回通道内的值。</li></ul> <div class="language-go extra-class"><pre class="language-go"><code>	<span class="token keyword">var</span> s2 <span class="token operator">=</span> <span class="token string">&quot;hello王子&quot;</span>
+	<span class="token keyword">for</span> i<span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> s2 <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d  %c\n&quot;</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> v<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+          <span class="token comment">/*
+          输出：
+          0  h
+          1  e
+          2  l
+          3  l
+          4  o
+          5  王
+          8  子
+          */</span>
+</code></pre></div><h3 id="switch"><a href="#switch" class="header-anchor">#</a> switch</h3> <p>switch用法跟其他语言没有区别。
+但是存在<code>fallthrough</code>语法，可以执行满足条件的case的下一个case，是为了兼容C语言中的case设计的。</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">switchDemo5</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	s <span class="token operator">:=</span> <span class="token string">&quot;a&quot;</span>
+	<span class="token keyword">switch</span> <span class="token punctuation">{</span>
+	<span class="token keyword">case</span> s <span class="token operator">==</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">:</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">)</span>
+		<span class="token keyword">fallthrough</span>
+	<span class="token keyword">case</span> s <span class="token operator">==</span> <span class="token string">&quot;b&quot;</span><span class="token punctuation">:</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;b&quot;</span><span class="token punctuation">)</span>
+	<span class="token keyword">default</span><span class="token punctuation">:</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;...&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/* 
+输出
+a
+b
+*/</span>
+</code></pre></div></div> <footer><!----> <hr> <p class="lastUpdated">最後更新：2021/11/23</p> <!----></footer></article> <div class="sticker vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h2 active"><a href="#安装go" title="安装Go">安装Go</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#go语言文件的基本结构" title="Go语言文件的基本结构">Go语言文件的基本结构</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#变量" title="变量">变量</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#声明变量" title="声明变量">声明变量</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#批量声明" title="批量声明">批量声明</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#简短变量声明" title="简短变量声明">简短变量声明</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#基础包" title="基础包">基础包</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#fmt占位符" title="fmt占位符">fmt占位符</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#字符串的常用操作" title="字符串的常用操作">字符串的常用操作</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#if语句" title="if语句">if语句</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#for语句" title="for语句">for语句</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#switch" title="switch">switch</a></div></div></div></div> <footer class="footer" data-v-9908f194><div class="footer-left-wrap" data-v-9908f194><ul class="contact" data-v-9908f194><li class="contact-item" data-v-9908f194><a href="https://github.com/kakigakki" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-9908f194><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github" data-v-9908f194><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" data-v-9908f194></path></svg>
+          
+        </a></li><li class="contact-item" data-v-9908f194><a href="/me-blog/2021/11/14/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/kakigakki@gmail.com.html" class="nav-link" data-v-9908f194><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail" data-v-9908f194><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" data-v-9908f194></path><polyline points="22,6 12,13 2,6" data-v-9908f194></polyline></svg>
+          
+        </a></li></ul></div> <div class="footer-right-wrap" data-v-9908f194><ul class="copyright" data-v-9908f194></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/me-blog/assets/js/app.4b1a192a.js" defer></script><script src="/me-blog/assets/js/6.28c07464.js" defer></script><script src="/me-blog/assets/js/3.db7e6e2f.js" defer></script><script src="/me-blog/assets/js/14.5beb0ec8.js" defer></script>
+  </body>
+</html>
